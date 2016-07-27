@@ -1,4 +1,4 @@
-#Laravel 5 - Validação em Português
+#Validator Docs Brasil 1.0
 
 Biblioteca para validação dos seguintes documentos: CPF, CNPJ e CNH.
 
@@ -7,42 +7,40 @@ Biblioteca para validação dos seguintes documentos: CPF, CNPJ e CNH.
 No arquivo `composer.json`, adicione:
 
 ```json
-{
-	"geekcom/validator-docs" : "1.*"
-}
+"require": {
+    "geekcom/validator-docs" : "1.*"
+    },
 ```
 
-Rode o comando `composer update --no-scripts`.
+Agora execute o comando `composer update --no-scripts`.
 
-Após a instalação, adicione no arquivo `config/app.php` a seguinte linha:
+Após a instalação, adicione no arquivo `config/app.php` no array `providers` a seguinte linha:
 
 ```php
-
 geekcom\ValidatorDocs\ValidatorProvider::class
-
 ```
 
-Para utilizar a validação agora, basta fazer o procedimento padrão do `Laravel`.
+Para utilizar a validação agora, basta fazer o procedimento padrão do `Laravel`, confira na documentação especifica para a sua versão
+
+* [Laravel 5.0 Validation](https://laravel.com/docs/5.0/validation)
+* [Laravel 5.1 Validation](https://laravel.com/docs/5.1/validation)
+* [Laravel 5.2 Validation](https://laravel.com/docs/5.2/validation)
 
 A diferença é que agora, você terá os seguintes métodos de validação:
 
-* cnpj - Valida se o CNPJ é valido. Para testar, basta utilizar o site http://www.geradorcnpj.com/
-
-* cpf - Valida se o cpf é valido. Para testar, basta utilizar o site http://geradordecpf.
+* cnpj - Verifica se o CNPJ é valido. Para testar, basta utilizar o site http://www.geradorcnpj.com/
+* cpf - Verifica se o cpf é valido. Para testar, basta utilizar o site http://geradordecpf.
 org
-
-* formato_cnpj - Valida se a mascará do CNPJ é válida
-
-* formato_cpf - Valida se a mascará do cpf está certo. 999.999.999-99
+* formato_cnpj - Verifica se a mascara do CNPJ é válida. ( 99.999.999/9999-99 )
+* formato_cpf - Verifica se a mascara do cpf é válida. ( 999.999.999-99 )
 
 
-Então, podemos usar um simples teste:
-
+Então, podemos usar um simples teste onde dizemos que o campo CPF será obrigatório e usamos a biblioteca para validar:
 
 ```php
 $validator = Validator::make(
-	['telefone' => '(77)9999-3333'],
-	['telefone' => 'required|telefone_com_ddd']
+	['cpf' => '813.766.431-97'],
+	['cpf' => 'required|cpf']
 );
 
 dd($validator->fails());
@@ -50,15 +48,33 @@ dd($validator->fails());
 ```
 
 
-Já existe nessa biblioteca algumas mensagens padrão para as validações de cada um dos items citados acima. 
+Já existe nessa biblioteca algumas mensagens padrão. 
 
-Para modificar isso, basta adicionar ao terceiro parâmetro de `Validator::make` um array, contendo o índice com o nome da validação e o valor com a mensagem desejada.
+Para modificar isso, basta adicionar ao terceiro parâmetro de `Validator::make`, um array, contendo o índice com o nome da validação e o valor com a mensagem desejada.
 
 
-Exemplo:
-
+Exemplo de uso em um controller:
 
 ```php
+$dados = $request->all();
+
+$rules = [
+	'cpf' => 'required|unique:pessoa|cpf',  
+];
+
+$messages = [
+	'documento.cpf' => 'o CPF digitado é inválido',    
+];
+
+$validator = Validator::make($dados, $rules, $messages);
+if ($validator->fails()) {
+	return redirect()->back()->withInput()->withErrors($validator);
+}
 
 ```
+
+Qualquer dúvida envie-me um email e fique a vontade para contribuir. XD
+
+danielrodrigues-ti@hotmail.com
+
 
