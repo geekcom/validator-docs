@@ -1,0 +1,26 @@
+{
+    "name": "geekcom/validator-docs",
+    "description": "Biblioteca para validação de CPF e CNPJ",
+    "license" : "MIT",
+    "authors": [
+        {
+            "name": "Daniel Rodrigues Lima",
+            "email": "danielrodrigues-ti@hotmail.com"
+        }
+    ],
+    "require": {
+        "illuminate/support": "5.*"
+    },
+    "required-dev" : {
+        "laravel/framework": "5.*"
+    },
+    "autoload": {
+        "psr-4": {
+            "geekcom\\ValidatorDocs\\": "src/validator-docs"
+        }
+    },
+    "minimum-stability": "stable",
+    "require-dev": {
+        "laravel/laravel": "5.0.*"
+    }
+}
