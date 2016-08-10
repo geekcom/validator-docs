@@ -38,12 +38,9 @@ org
 Então, podemos usar um simples teste onde dizemos que o campo CPF será obrigatório e usamos a biblioteca para validar:
 
 ```php
-$validator = Validator::make(
-	['cpf' => '813.766.431-97'],
-	['cpf' => 'required|cpf']
-);
-
-dd($validator->fails());
+$this->validate($request, [
+            'cpf' => 'required|cpf',
+        ]);
 
 ```
 
