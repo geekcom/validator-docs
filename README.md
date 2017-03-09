@@ -21,12 +21,7 @@ geekcom\ValidatorDocs\ValidatorProvider::class
 ```
 
 Para utilizar a validação agora, basta fazer o procedimento padrão do `Laravel`, confira na documentação especifica para a sua versão
-
-* [Laravel 5.0 Validation](https://laravel.com/docs/5.0/validation)
-* [Laravel 5.1 Validation](https://laravel.com/docs/5.1/validation)
-* [Laravel 5.2 Validation](https://laravel.com/docs/5.2/validation)
-
-A diferença é que agora, você terá os seguintes métodos de validação:
+a diferença é que agora, você terá os seguintes métodos de validação:
 
 * cnpj - Verifica se o CNPJ é valido. Para testar, basta utilizar o site http://www.geradorcnpj.com/
 * cpf - Verifica se o cpf é valido. Para testar, basta utilizar o site http://geradordecpf.
