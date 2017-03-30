@@ -18,7 +18,7 @@ class TestValidator extends ValidatorTestCase
 
         $this->assertTrue($correct->passes());
 
-        $this->assertTrue($incorrect->fails()); 
+        $this->assertTrue($incorrect->fails());
     }
 
     public function testCpfFormato()
@@ -35,7 +35,7 @@ class TestValidator extends ValidatorTestCase
 
         $this->assertTrue($correct->passes());
 
-        $this->assertTrue($incorrect->fails()); 
+        $this->assertTrue($incorrect->fails());
     }
 
 
@@ -53,7 +53,7 @@ class TestValidator extends ValidatorTestCase
 
         $this->assertTrue($correct->passes());
 
-        $this->assertTrue($incorrect->fails()); 
+        $this->assertTrue($incorrect->fails());
     }
 
 
@@ -71,7 +71,7 @@ class TestValidator extends ValidatorTestCase
 
         $this->assertTrue($correct->passes());
 
-        $this->assertTrue($incorrect->fails()); 
+        $this->assertTrue($incorrect->fails());
     }
 
     public function testCnh()
@@ -88,7 +88,7 @@ class TestValidator extends ValidatorTestCase
 
         $this->assertTrue($correct->passes());
 
-        $this->assertTrue($incorrect->fails()); 
+        $this->assertTrue($incorrect->fails());
     }
 
 }

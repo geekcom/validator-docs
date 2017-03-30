@@ -1,44 +1,43 @@
-<?php 
+<?php
 
 namespace geekcom\ValidatorDocs;
 
 use Illuminate\Validation\Validator as BaseValidator;
 
 /**
-*
-* @author Daniel Rodrigues Lima 
-*/
-
+ *
+ * @author Daniel Rodrigues Lima
+ */
 class Validator extends BaseValidator
 {
     /**
-    * Valida o formato do cpf
-    * @param string $attribute
-    * @param string $value
-    * @return boolean
-    */
+     * Valida o formato do cpf
+     * @param string $attribute
+     * @param string $value
+     * @return boolean
+     */
     protected function validateFormatoCpf($attribute, $value)
     {
         return preg_match('/^\d{3}\.\d{3}\.\d{3}-\d{2}$/', $value) > 0;
     }
 
     /**
-    * Valida o formato do cnpj
-    * @param string $attribute
-    * @param string $value
-    * @return boolean
-    */
+     * Valida o formato do cnpj
+     * @param string $attribute
+     * @param string $value
+     * @return boolean
+     */
     protected function validateFormatoCnpj($attribute, $value)
     {
         return preg_match('/^\d{2}\.\d{3}\.\d{3}\/\d{4}-\d{2}$/', $value) > 0;
     }
 
     /**
-    * Valida se o CPF é válido
-    * @param string $attribute
-    * @param string $value
-    * @return boolean
-    */
+     * Valida se o CPF é válido
+     * @param string $attribute
+     * @param string $value
+     * @return boolean
+     */
 
     protected function validateCpf($attribute, $value)
     {
@@ -48,13 +47,13 @@ class Validator extends BaseValidator
             return false;
         }
 
-        for ($s = 10, $n = 0, $i = 0; $s >= 2; $n += $c[$i++] * $s--);
+        for ($s = 10, $n = 0, $i = 0; $s >= 2; $n += $c[$i++] * $s--) ;
 
         if ($c[9] != ((($n %= 11) < 2) ? 0 : 11 - $n)) {
             return false;
         }
 
-        for ($s = 11, $n = 0, $i = 0; $s >= 2; $n += $c[$i++] * $s--);
+        for ($s = 11, $n = 0, $i = 0; $s >= 2; $n += $c[$i++] * $s--) ;
 
         if ($c[10] != ((($n %= 11) < 2) ? 0 : 11 - $n)) {
             return false;
@@ -65,11 +64,11 @@ class Validator extends BaseValidator
     }
 
     /**
-    * Valida se o CNPJ é válido
-    * @param string $attribute
-    * @param string $value
-    * @return boolean
-    */
+     * Valida se o CNPJ é válido
+     * @param string $attribute
+     * @param string $value
+     * @return boolean
+     */
     protected function validateCnpj($attribute, $value)
     {
         $c = preg_replace('/\D/', '', $value);
@@ -80,13 +79,13 @@ class Validator extends BaseValidator
             return false;
         }
 
-        for ($i = 0, $n = 0; $i < 12; $n += $c[$i] * $b[++$i]);
+        for ($i = 0, $n = 0; $i < 12; $n += $c[$i] * $b[++$i]) ;
 
         if ($c[12] != ((($n %= 11) < 2) ? 0 : 11 - $n)) {
             return false;
         }
 
-        for ($i = 0, $n = 0; $i <= 12; $n += $c[$i] * $b[$i++]);
+        for ($i = 0, $n = 0; $i <= 12; $n += $c[$i] * $b[$i++]) ;
 
         if ($c[13] != ((($n %= 11) < 2) ? 0 : 11 - $n)) {
             return false;
@@ -97,25 +96,26 @@ class Validator extends BaseValidator
     }
 
     /**
-    * Valida se o CNH é válido
-    * @param string $attribute
-    * @param string $value
-    * @return boolean
-    */
+     * Valida se o CNH é válido
+     * @param string $attribute
+     * @param string $value
+     * @return boolean
+     */
 
     protected function validateCnh($attribute, $value)
     {
         // Trecho retirado do respect validation
 
         $ret = false;
-        
+
         if ((strlen($input = preg_replace('/[^\d]/', '', $value)) == 11)
-            && (str_repeat($input[1], 11) != $input)) {
+            && (str_repeat($input[1], 11) != $input)
+        ) {
             $dsc = 0;
 
             for ($i = 0, $j = 9, $v = 0; $i < 9; ++$i, --$j) {
 
-                $v += (int) $input[$i] * $j;
+                $v += (int)$input[$i] * $j;
 
             }
 
@@ -128,8 +128,8 @@ class Validator extends BaseValidator
 
             for ($i = 0, $j = 1, $v = 0; $i < 9; ++$i, ++$j) {
 
-                $v += (int) $input[$i] * $j;
-                
+                $v += (int)$input[$i] * $j;
+
             }
 
             $vl2 = ($x = ($v % 11)) >= 10 ? 0 : $x - $dsc;

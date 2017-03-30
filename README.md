@@ -1,8 +1,10 @@
-#Validator Docs Brasil 1.0
+# Validate Docs - Brasil
+
+[![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/geekcom/validator-docs/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/geekcom/validator-docs/?branch=master)
 
 Biblioteca para validação dos seguintes documentos: CPF, CNPJ e CNH.
 
-#Instalação
+# Instalação
 
 No arquivo `composer.json`, adicione:
 

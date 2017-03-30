@@ -1,4 +1,4 @@
-<?php 
+<?php
 
 namespace geekcom\ValidatorDocs;
 
@@ -14,22 +14,21 @@ class ValidatorProvider extends ServiceProvider
      */
     protected $defer = false;
 
-    
+
     /**
      * Bootstrap the application events.
      *
      * @return void
      */
-     
+
     public function boot()
     {
 
         $me = $this;
 
-        $this->app['validator']->resolver(function ($translator, $data, $rules, $messages) use($me)
-        {
+        $this->app['validator']->resolver(function ($translator, $data, $rules, $messages) use ($me) {
             $messages += $me->getMessages();
-            
+
             return new Validator($translator, $data, $rules, $messages);
         });
     }
@@ -37,12 +36,12 @@ class ValidatorProvider extends ServiceProvider
 
     protected function getMessages()
     {
-        return [        
-            'cnh'              => 'O campo :attribute não é uma carteira nacional de habilitação válida',
-            'cnpj'             => 'O campo :attribute não é um CNPJ válido',
-            'cpf'              => 'O campo :attribute não é um CPF válido',
-            'formato_cnpj'     => 'O campo :attribute não possui o formato válido de CNPJ',
-            'formato_cpf'      => 'O campo :attribute não possui o formato válido de CPF',
+        return [
+            'cnh' => 'O campo :attribute não é uma carteira nacional de habilitação válida',
+            'cnpj' => 'O campo :attribute não é um CNPJ válido',
+            'cpf' => 'O campo :attribute não é um CPF válido',
+            'formato_cnpj' => 'O campo :attribute não possui o formato válido de CNPJ',
+            'formato_cpf' => 'O campo :attribute não possui o formato válido de CPF',
         ];
     }
 
@@ -51,7 +50,9 @@ class ValidatorProvider extends ServiceProvider
      *
      * @return void
      */
-    public function register(){}
+    public function register()
+    {
+    }
 
     /**
      * Get the services provided by the provider.
