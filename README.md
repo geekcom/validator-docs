@@ -67,8 +67,4 @@ if ($validator->fails()) {
 
 ```
 
-Qualquer dúvida envie-me um email e fique a vontade para contribuir. XD
-
-danielrodrigues-ti@hotmail.com
-
-
+Fique a vontade para contribuir. XD
