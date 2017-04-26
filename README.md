@@ -2,7 +2,7 @@
 
 [![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/geekcom/validator-docs/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/geekcom/validator-docs/?branch=master)
 
-Biblioteca para validação dos seguintes documentos: CPF, CNPJ e CNH.
+Biblioteca Laravel para validação dos seguintes documentos: CPF, CNPJ e CNH.
 
 # Instalação
 
