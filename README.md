@@ -26,8 +26,7 @@ Para utilizar a validação agora, basta fazer o procedimento padrão do `Larave
 a diferença é que agora, você terá os seguintes métodos de validação:
 
 * cnpj - Verifica se o CNPJ é valido. Para testar, basta utilizar o site http://www.geradorcnpj.com/
-* cpf - Verifica se o cpf é valido. Para testar, basta utilizar o site http://geradordecpf.
-org
+* cpf - Verifica se o cpf é valido. Para testar, basta utilizar o site http://geradordecpf.org
 * formato_cnpj - Verifica se a mascara do CNPJ é válida. ( 99.999.999/9999-99 )
 * formato_cpf - Verifica se a mascara do cpf é válida. ( 999.999.999-99 )
 
