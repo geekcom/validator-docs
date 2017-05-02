@@ -2,19 +2,25 @@
 
 [![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/geekcom/validator-docs/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/geekcom/validator-docs/?branch=master)
 
-Biblioteca Laravel para validação dos seguintes documentos: CPF, CNPJ e CNH.
+Biblioteca Laravel para validação de CPF, CNPJ e CNH.
 
 # Instalação
 
 No arquivo `composer.json`, adicione:
 
-```json
+```
 "require": {
     "geekcom/validator-docs" : "1.*"
-    },
+ },
 ```
 
-Agora execute o comando `composer update --no-scripts`.
+Ou rode o comando:
+
+```
+composer require geekcom/validator-docs
+```
+
+Agora execute o comando `composer update`.
 
 Após a instalação, adicione no arquivo `config/app.php` no array `providers` a seguinte linha:
 
@@ -35,35 +41,8 @@ Então, podemos usar um simples teste onde dizemos que o campo CPF será obrigat
 
 ```php
 $this->validate($request, [
-            'cpf' => 'required|cpf',
-        ]);
-
+          'cpf' => 'required|cpf',
+      ]);
 ```
 
-
-Já existe nessa biblioteca algumas mensagens padrão. 
-
-Para modificar isso, basta adicionar ao terceiro parâmetro de `Validator::make`, um array, contendo o índice com o nome da validação e o valor com a mensagem desejada.
-
-
-Exemplo de uso em um controller:
-
-```php
-$dados = $request->all();
-
-$rules = [
-	'cpf' => 'required|unique:pessoa|cpf',  
-];
-
-$messages = [
-	'documento.cpf' => 'o CPF digitado é inválido',    
-];
-
-$validator = Validator::make($dados, $rules, $messages);
-if ($validator->fails()) {
-	return redirect()->back()->withInput()->withErrors($validator);
-}
-
-```
-
-Fique a vontade para contribuir. XD
+Fique a vontade para contribuir fazendo um fork.

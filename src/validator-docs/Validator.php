@@ -7,6 +7,7 @@ use Illuminate\Validation\Validator as BaseValidator;
 /**
  *
  * @author Daniel Rodrigues Lima
+ * @email danielrodrigues-ti@hotmail.com
  */
 class Validator extends BaseValidator
 {
