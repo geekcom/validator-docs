@@ -74,11 +74,11 @@ class Validator extends BaseValidator
     {
         $c = preg_replace('/\D/', '', $value);
 
-        $b = [6, 5, 4, 3, 2, 9, 8, 7, 6, 5, 4, 3, 2];
-
-        if (strlen($c) != 14) {
+        if (strlen($c) != 14 || preg_match("/^{$c[0]}{14}$/", $c)) {
             return false;
         }
+
+        $b = [6, 5, 4, 3, 2, 9, 8, 7, 6, 5, 4, 3, 2];
 
         for ($i = 0, $n = 0; $i < 12; $n += $c[$i] * $b[++$i]) ;
 
