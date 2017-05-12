@@ -40,8 +40,10 @@ class ValidatorProvider extends ServiceProvider
             'cnh' => 'O campo :attribute não é uma carteira nacional de habilitação válida',
             'cnpj' => 'O campo :attribute não é um CNPJ válido',
             'cpf' => 'O campo :attribute não é um CPF válido',
+            'cpf_cnpj' => 'O campo :attribute não é válido',
             'formato_cnpj' => 'O campo :attribute não possui o formato válido de CNPJ',
             'formato_cpf' => 'O campo :attribute não possui o formato válido de CPF',
+            'formato_cpf_cnpj' => 'O campo :attribute não possui um formato válido',
         ];
     }
 
