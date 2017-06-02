@@ -31,7 +31,6 @@ geekcom\ValidatorDocs\ValidatorProvider::class
 Para utilizar a validação agora, basta fazer o procedimento padrão do `Laravel`, confira na documentação especifica para a sua versão,
 a diferença é que agora, você terá os seguintes métodos de validação:
 
-
 * cnpj - Verifica se o CNPJ é valido. Para testar, basta utilizar o site http://www.geradorcnpj.com/
 * cpf - Verifica se o cpf é valido. Para testar, basta utilizar o site http://geradordecpf.org
 * cpf_cnpj - Verifica se é um cpf ou cnpj valido. Para testar, basta utilizar um dos sites acima
