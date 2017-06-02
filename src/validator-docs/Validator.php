@@ -34,6 +34,17 @@ class Validator extends BaseValidator
     }
 
     /**
+     * Valida o formato do cpf ou cnpj
+     * @param string $attribute
+     * @param string $value
+     * @return boolean
+     */
+    protected function validateFormatoCpfCnpj($attribute, $value)
+    {
+        return $this->validateFormatoCpf($attribute, $value) || $this->validateFormatoCnpj($attribute, $value);
+    }
+
+    /**
      * Valida se o CPF é válido
      * @param string $attribute
      * @param string $value
@@ -94,6 +105,17 @@ class Validator extends BaseValidator
 
         return true;
 
+    }
+
+    /**
+     * Valida se o CNPJ é válido
+     * @param string $attribute
+     * @param string $value
+     * @return boolean
+     */
+    protected function validateCpfCnpj($attribute, $value)
+    {
+        return ($this->validateCpf($attribute, $value) || $this->validateCnpj($attribute, $value));
     }
 
     /**

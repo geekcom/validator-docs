@@ -74,6 +74,43 @@ class TestValidator extends ValidatorTestCase
         $this->assertTrue($incorrect->fails());
     }
 
+
+    public function testCpfCnpj()
+    {
+        $correct = \Validator::make(
+            ['certo' => '53.084.587/0001-20'],
+            ['certo' => 'cpf-cnpj']
+        );
+
+        $incorrect = \Validator::make(
+            ['errado' => '99800-1926'],
+            ['errado' => 'cpf-cnpj']
+        );
+
+        $this->assertTrue($correct->passes());
+
+        $this->assertTrue($incorrect->fails());
+    }
+
+
+    public function testCpfCnpjFormato()
+    {
+        $correct = \Validator::make(
+            ['certo' => '094.050.986-59'],
+            ['certo' => 'formato-cpf-cnpj']
+        );
+
+        $incorrect = \Validator::make(
+            ['errado' => '51.084.587/000120'],
+            ['errado' => 'formato-cpf-cnpj']
+        );
+
+        $this->assertTrue($correct->passes());
+
+        $this->assertTrue($incorrect->fails());
+    }
+
+
     public function testCnh()
     {
         $correct = \Validator::make(
