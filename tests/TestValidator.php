@@ -128,4 +128,22 @@ class TestValidator extends ValidatorTestCase
         $this->assertTrue($incorrect->fails());
     }
 
+
+    public function testTituloEleitor()
+    {
+        $correct = \Validator::make(
+            ['certo' => '3021260'],
+            ['certo' => 'titulo_eleitor']
+        );
+
+        $incorrect = \Validator::make(
+            ['errado' => '1000101230190'],
+            ['errado' => 'titulo_eleitor']
+        );
+
+        $this->assertTrue($correct->passes());
+
+        $this->assertTrue($incorrect->fails());
+    }
+
 }
