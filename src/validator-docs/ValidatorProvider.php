@@ -38,6 +38,7 @@ class ValidatorProvider extends ServiceProvider
     {
         return [
             'cnh' => 'O campo :attribute não é uma carteira nacional de habilitação válida',
+            'titulo_eleitor' => 'O campo :attribute não é um título de eleitor válido',
             'cnpj' => 'O campo :attribute não é um CNPJ válido',
             'cpf' => 'O campo :attribute não é um CPF válido',
             'cpf_cnpj' => 'O campo :attribute não é válido',
