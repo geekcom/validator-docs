@@ -9,15 +9,23 @@ Biblioteca Laravel para validação de CPF, CNPJ, CPF/CNPJ (quando salvos no mes
 No arquivo `composer.json`, adicione:
 
 ```
+"repositories": {
+    "validator-docs": {
+        "type": "package",
+        "package": {
+            "name": "enniosousa/validator-docs",
+            "version": "1.0",
+            "source": {
+                "url": "https://github.com/enniosousa/validator-docs.git",
+                "type": "git",
+                "reference": "origin/master"
+            }
+        }
+    }
+},
 "require": {
-    "geekcom/validator-docs" : "1.*"
+    "enniosousa/validator-docs" : "1.0"
  },
-```
-
-Ou rode o comando:
-
-```
-composer require geekcom/validator-docs
 ```
 
 Agora execute o comando `composer update`.
@@ -25,7 +33,7 @@ Agora execute o comando `composer update`.
 Após a instalação, adicione no arquivo `config/app.php` no array `providers` a seguinte linha:
 
 ```php
-geekcom\ValidatorDocs\ValidatorProvider::class
+enniosousa\ValidatorDocs\ValidatorProvider::class
 ```
 
 Para utilizar a validação agora, basta fazer o procedimento padrão do `Laravel`, confira na documentação especifica para a sua versão,

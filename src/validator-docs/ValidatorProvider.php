@@ -26,10 +26,10 @@ class ValidatorProvider extends ServiceProvider
 
         $me = $this;
 
-        $this->app['validator']->resolver(function ($translator, $data, $rules, $messages) use ($me) {
+        $this->app['validator']->resolver(function ($translator, $data, $rules, $messages, $attributes) use ($me) {
             $messages += $me->getMessages();
 
-            return new Validator($translator, $data, $rules, $messages);
+            return new Validator($translator, $data, $rules, $messages, $attributes);
         });
     }
 
