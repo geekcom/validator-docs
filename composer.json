@@ -16,7 +16,7 @@
     },
     "autoload": {
         "psr-4": {
-            "geekcom\\ValidatorDocs\\": "src/validator-docs"
+            "enniosousa\\ValidatorDocs\\": "src/validator-docs"
         }
     },
     "minimum-stability": "stable",
