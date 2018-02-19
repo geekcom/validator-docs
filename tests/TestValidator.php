@@ -1,7 +1,5 @@
 <?php
 
-use geekcom\ValidatorDocs\Validator;
-
 class TestValidator extends ValidatorTestCase
 {
     public function testCpf()
