@@ -31,14 +31,14 @@ geekcom\ValidatorDocs\ValidatorProvider::class
 Para utilizar a validação agora, basta fazer o procedimento padrão do `Laravel`, confira na documentação especifica para a sua versão,
 a diferença é que agora, você terá os seguintes métodos de validação:
 
-* cnh - Verifica se uma CNH é valida. Para testar, basta utilizar o site http://4devs.com.br/gerador_de_cnh
-* titulo_eleitor - Verifica se um Título de Eleitor é valido. Para testar, basta utilizar o site http://4devs.com.br/gerador_de_titulo_de_eleitor
-* cnpj - Verifica se o CNPJ é valido. Para testar, basta utilizar o site http://www.geradorcnpj.com/
-* cpf - Verifica se o CPF é valido. Para testar, basta utilizar o site http://geradordecpf.org
-* cpf_cnpj - Verifica se é um CPF ou CNPJ valido. Para testar, basta utilizar um dos sites acima
-* formato_cnpj - Verifica se a mascara do CNPJ é válida. ( 99.999.999/9999-99 )
-* formato_cpf - Verifica se a mascara do CPF é válida. ( 999.999.999-99 )
-* formato_cpf_cnpj - Verifica se a mascara do CPF ou CNPJ é válida. ( 999.999.999-99 ) ou ( 99.999.999/9999-99 )
+* **cnh** - Verifica se uma CNH é valida. Para testar, basta utilizar o site http://4devs.com.br/gerador_de_cnh
+* **titulo_eleitor** - Verifica se um Título de Eleitor é valido. Para testar, basta utilizar o site http://4devs.com.br/gerador_de_titulo_de_eleitor
+* **cnpj** - Verifica se o CNPJ é valido. Para testar, basta utilizar o site http://www.geradorcnpj.com/
+* **cpf** - Verifica se o CPF é valido. Para testar, basta utilizar o site http://geradordecpf.org
+* **cpf_cnpj** - Verifica se é um CPF ou CNPJ valido. Para testar, basta utilizar um dos sites acima
+* **formato_cnpj** - Verifica se a mascara do CNPJ é válida. ( 99.999.999/9999-99 )
+* **formato_cpf** - Verifica se a mascara do CPF é válida. ( 999.999.999-99 )
+* **formato_cpf_cnpj** - Verifica se a mascara do CPF ou CNPJ é válida. ( 999.999.999-99 ) ou ( 99.999.999/9999-99 )
 
 
 Então, podemos usar um simples teste onde dizemos que o campo CPF será obrigatório e usamos a biblioteca para validar:
