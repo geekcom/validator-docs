@@ -37,14 +37,14 @@ class ValidatorProvider extends ServiceProvider
     protected function getMessages()
     {
         return [
-            'cnh' => 'O campo :attribute não é uma carteira nacional de habilitação válida',
-            'titulo_eleitor' => 'O campo :attribute não é um título de eleitor válido',
-            'cnpj' => 'O campo :attribute não é um CNPJ válido',
-            'cpf' => 'O campo :attribute não é um CPF válido',
-            'cpf_cnpj' => 'O campo :attribute não é válido',
-            'formato_cnpj' => 'O campo :attribute não possui o formato válido de CNPJ',
-            'formato_cpf' => 'O campo :attribute não possui o formato válido de CPF',
-            'formato_cpf_cnpj' => 'O campo :attribute não possui um formato válido',
+            'cnh' => 'Carteira Nacional de Habilitação inválida',
+            'titulo_eleitor' => 'Título de Eleitor inválido',
+            'cnpj' => 'CNPJ inválido',
+            'cpf' => 'CPF inválido',
+            'cpf_cnpj' => 'CPF ou CNPJ inválido',
+            'formato_cnpj' => 'Formato inválido para CNPJ',
+            'formato_cpf' => 'Formato inválido para CPF',
+            'formato_cpf_cnpj' => 'Formato inválido para CPF ou CNPJ',
         ];
     }
 

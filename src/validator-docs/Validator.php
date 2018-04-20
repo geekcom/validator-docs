@@ -45,7 +45,7 @@ class Validator extends BaseValidator
     }
 
     /**
-     * Valida se o CPF é válido
+     * Valida CPF
      * @param string $attribute
      * @param string $value
      * @return boolean
@@ -76,7 +76,7 @@ class Validator extends BaseValidator
     }
 
     /**
-     * Valida se o CNPJ é válido
+     * Valida CNPJ
      * @param string $attribute
      * @param string $value
      * @return boolean
@@ -108,7 +108,7 @@ class Validator extends BaseValidator
     }
 
     /**
-     * Valida se o CNPJ é válido
+     * Valida CNPJ ou CPF
      * @param string $attribute
      * @param string $value
      * @return boolean
@@ -119,7 +119,7 @@ class Validator extends BaseValidator
     }
 
     /**
-     * Valida se o CNH é válido
+     * Valida CNH
      * @param string $attribute
      * @param string $value
      * @return boolean
@@ -164,7 +164,7 @@ class Validator extends BaseValidator
     }   
 
     /**
-     * Valida se o Titulo de Eleitor é válido
+     * Valida Titulo de Eleitor
      * @param string $attribute
      * @param string $value
      * @return boolean
