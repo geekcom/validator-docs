@@ -21,6 +21,13 @@
     },
     "minimum-stability": "stable",
     "require-dev": {
-        "laravel/laravel": "5.0.*"
+        "laravel/laravel": "5.*"
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "geekcom\\ValidatorDocs\\ValidatorProvider"
+            ]
+        }
     }
 }
