@@ -17,13 +17,13 @@ trait maskDocs
         if (isset($this->docFields) && isset($this->docFields[$key])) {
             switch ($this->docFields[$key]){
                 case 'cpf':
-                    $val = self::mask($val, '###.###.###-##');
+                    $val = $this->mask($val, '###.###.###-##');
                     break;
                 case 'cnpj':
-                    $val = self::mask($val, '##.###.###/####-##');
+                    $val = $this->mask($val, '##.###.###/####-##');
                     break;
                 case 'cpfcnpj':
-                    $val = self::mask($val, strlen($val) > 11 ? '##.###.###/####-##': '###.###.###-##');
+                    $val = $this->mask($val, strlen($val) > 11 ? '##.###.###/####-##': '###.###.###-##');
                     break;
                 default:
                     throw new \Exception("mascara '$this->docFields[$key]' nao parece ser valida");
