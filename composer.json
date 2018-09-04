@@ -1,5 +1,5 @@
 {
-    "name": "geekcom/validator-docs",
+    "name": "allfa/validator-docs",
     "description": "Biblioteca para validação de Título de Eleitor, CPF, CNPJ e CNH",
     "license" : "MIT",
     "authors": [
