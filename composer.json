@@ -1,26 +1,29 @@
 {
-    "name": "geekcom/validator-docs",
-    "description": "Biblioteca para validação de Título de Eleitor, CPF, CNPJ e CNH",
-    "license" : "MIT",
-    "authors": [
-        {
-            "name": "Daniel Rodrigues Lima",
-            "email": "danielrodrigues-ti@hotmail.com"
-        }
-    ],
-    "require": {
-        "illuminate/support": "5.*"
-    },
-    "required-dev" : {
-        "laravel/framework": "5.*"
-    },
-    "autoload": {
-        "psr-4": {
-            "geekcom\\ValidatorDocs\\": "src/validator-docs"
-        }
-    },
-    "minimum-stability": "stable",
-    "require-dev": {
-        "laravel/laravel": "5.0.*"
+  "name": "geekcom/validator-docs",
+  "description": "Biblioteca para validação de Título de Eleitor, CPF, CNPJ e CNH",
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Daniel Rodrigues Lima",
+      "email": "danielrodrigues-ti@hotmail.com"
     }
+  ],
+  "require": {
+    "illuminate/support": "5.*"
+  },
+  "require-dev": {
+    "laravel/framework": "5.*",
+    "laravel/laravel": "5.0.*",
+    "phpunit/phpunit": "^7.5"
+  },
+  "autoload": {
+    "psr-4": {
+      "geekcom\\ValidatorDocs\\": "src/validator-docs"
+    }
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "geekcom\\ValidatorDocs\\Tests\\": "tests"
+    }
+  }
 }

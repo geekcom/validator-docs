@@ -1,6 +1,8 @@
 <?php
 
-class TestValidator extends ValidatorTestCase
+namespace geekcom\ValidatorDocs\Tests;
+
+final class TestValidator extends ValidatorTestCase
 {
     public function testCpf()
     {
