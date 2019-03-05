@@ -23,8 +23,6 @@ Ou rode o comando:
 composer require geekcom/validator-docs
 ```
 
-Agora execute o comando `composer update`.
-
 Após a instalação, adicione no arquivo `config/app.php` no array `providers` a seguinte linha:
 
 ```php
@@ -44,7 +42,7 @@ a diferença é que agora, você terá os seguintes métodos de validação:
 * **formato_cpf_cnpj** - Verifica se a mascara do CPF ou CNPJ é válida. ( 999.999.999-99 ) ou ( 99.999.999/9999-99 )
 
 
-Então, podemos usar um simples teste onde dizemos que o campo CPF será obrigatório e usamos a biblioteca para validar:
+Então, podemos realizar um simples teste onde dizemos que o campo CPF será obrigatório e usamos a biblioteca para validar:
 
 ```php
 $this->validate($request, [
