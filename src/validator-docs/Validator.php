@@ -43,6 +43,17 @@ class Validator extends BaseValidator
     {
         return $this->validateFormatoCpf($attribute, $value) || $this->validateFormatoCnpj($attribute, $value);
     }
+    
+    /**
+     * Valida o formato do PIS/PASEP/NIS/NIT
+     * @param string $attribute
+     * @param string $value
+     * @return boolean
+     */
+    protected function validateFormatoNis($attribute, $value)
+    {
+        return preg_match('/^\d{3}\.\d{5}\.\d{2}-\d{1}$/', $value) > 0;
+    }
 
     /**
      * Valida CPF
@@ -223,6 +234,28 @@ class Validator extends BaseValidator
         }
         
         return true;
+    }
+    
+    /**
+     * Valida PIS/PASEP/NIS/NIT
+     * @param string $attribute
+     * @param string $value
+     * @return boolean
+     */
+
+    protected function validateNis($attribute, $value)
+    {
+        $nis = sprintf('%011s', preg_replace('{\D}', '', $value));
+
+        if (strlen($nis) != 11 || preg_match("/^{$nis[0]}{11}$/", $nis)) {
+            return false;
+        }
+
+        for ($d = 0, $p = 2, $c = 9; $c >= 0; $c--, ($p < 9) ? $p++ : $p = 2) {
+            $d += $nis[$c] * $p;
+        }
+
+        return ($nis[10] == (((10 * $d) % 11) % 10));
     }
 
 }
