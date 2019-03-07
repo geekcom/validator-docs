@@ -145,5 +145,39 @@ final class TestValidator extends ValidatorTestCase
 
         $this->assertTrue($incorrect->fails());
     }
+    
+    public function testNis()
+    {
+        $correct = \Validator::make(
+            ['certo' => '201.73374.34-9'],
+            ['certo' => 'nis']
+        );
+
+        $incorrect = \Validator::make(
+            ['errado' => '201.73374.34-0'],
+            ['errado' => 'nis']
+        );
+
+        $this->assertTrue($correct->passes());
+
+        $this->assertTrue($incorrect->fails());
+    }
+
+    public function testNisormato()
+    {
+        $correct = \Validator::make(
+            ['certo' => '201.73374.34-9'],
+            ['certo' => 'formato-nis']
+        );
+
+        $incorrect = \Validator::make(
+            ['errado' => '201.733.7434-9'],
+            ['errado' => 'formato-nis']
+        );
+
+        $this->assertTrue($correct->passes());
+
+        $this->assertTrue($incorrect->fails());
+    }
 
 }
