@@ -37,9 +37,11 @@ a diferença é que agora, você terá os seguintes métodos de validação:
 * **cnpj** - Verifica se o CNPJ é valido. Para testar, basta utilizar o site http://www.geradorcnpj.com/
 * **cpf** - Verifica se o CPF é valido. Para testar, basta utilizar o site http://geradordecpf.org
 * **cpf_cnpj** - Verifica se é um CPF ou CNPJ valido. Para testar, basta utilizar um dos sites acima
+* **nis** - Verifica se o PIS/PASEP/NIT/NIS é valido. Para testar, basta utilizar o site https://www.4devs.com.br/gerador_de_pis_pasep
 * **formato_cnpj** - Verifica se a mascara do CNPJ é válida. ( 99.999.999/9999-99 )
 * **formato_cpf** - Verifica se a mascara do CPF é válida. ( 999.999.999-99 )
 * **formato_cpf_cnpj** - Verifica se a mascara do CPF ou CNPJ é válida. ( 999.999.999-99 ) ou ( 99.999.999/9999-99 )
+* **formato_nis** - Verifica se a mascara do PIS/PASEP/NIT/NIS é válida. ( 999.99999-99.9 )
 
 
 Então, podemos realizar um simples teste onde dizemos que o campo CPF será obrigatório e usamos a biblioteca para validar:
