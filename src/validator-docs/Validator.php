@@ -43,7 +43,7 @@ class Validator extends BaseValidator
     {
         return $this->validateFormatoCpf($attribute, $value) || $this->validateFormatoCnpj($attribute, $value);
     }
-    
+
     /**
      * Valida o formato do PIS/PASEP/NIS/NIT
      * @param string $attribute
@@ -70,20 +70,19 @@ class Validator extends BaseValidator
             return false;
         }
 
-        for ($s = 10, $n = 0, $i = 0; $s >= 2; $n += $c[$i++] * $s--) ;
+        for ($s = 10, $n = 0, $i = 0; $s >= 2; $n += $c[$i++] * $s--);
 
         if ($c[9] != ((($n %= 11) < 2) ? 0 : 11 - $n)) {
             return false;
         }
 
-        for ($s = 11, $n = 0, $i = 0; $s >= 2; $n += $c[$i++] * $s--) ;
+        for ($s = 11, $n = 0, $i = 0; $s >= 2; $n += $c[$i++] * $s--);
 
         if ($c[10] != ((($n %= 11) < 2) ? 0 : 11 - $n)) {
             return false;
         }
 
         return true;
-
     }
 
     /**
@@ -102,20 +101,19 @@ class Validator extends BaseValidator
 
         $b = [6, 5, 4, 3, 2, 9, 8, 7, 6, 5, 4, 3, 2];
 
-        for ($i = 0, $n = 0; $i < 12; $n += $c[$i] * $b[++$i]) ;
+        for ($i = 0, $n = 0; $i < 12; $n += $c[$i] * $b[++$i]);
 
         if ($c[12] != ((($n %= 11) < 2) ? 0 : 11 - $n)) {
             return false;
         }
 
-        for ($i = 0, $n = 0; $i <= 12; $n += $c[$i] * $b[$i++]) ;
+        for ($i = 0, $n = 0; $i <= 12; $n += $c[$i] * $b[$i++]);
 
         if ($c[13] != ((($n %= 11) < 2) ? 0 : 11 - $n)) {
             return false;
         }
 
         return true;
-
     }
 
     /**
@@ -172,7 +170,7 @@ class Validator extends BaseValidator
         }
 
         return $ret;
-    }   
+    }
 
     /**
      * Valida Titulo de Eleitor
@@ -188,9 +186,9 @@ class Validator extends BaseValidator
 
         $uf = substr($input, -4, 2);
 
-        if (((strlen($input) < 5) || (strlen($input) > 13)) || 
-        (str_repeat($input[1], strlen($input)) == $input) || 
-        ($uf < 1 || $uf > 28)) {
+        if (((strlen($input) < 5) || (strlen($input) > 13)) ||
+            (str_repeat($input[1], strlen($input)) == $input) ||
+            ($uf < 1 || $uf > 28)) {
             return false;
         }
 
@@ -199,11 +197,11 @@ class Validator extends BaseValidator
 
         $sequencia = substr($input, 0, -4);
 
-        for ($i = 0; $i < 2; $i++) { 
+        for ($i = 0; $i < 2; $i++) {
             $fator = 9;
             $soma = 0;
 
-            for ($j = (strlen($sequencia) - 1); $j > -1; $j--) { 
+            for ($j = (strlen($sequencia) - 1); $j > -1; $j--) {
                 $soma += $sequencia[$j] * $fator;
 
                 if ($fator == $base) {
@@ -220,7 +218,7 @@ class Validator extends BaseValidator
             } elseif ($digito == 10) {
                 $digito = 0;
             }
-            
+
             if ($dv[$i] != $digito) {
                 return false;
             }
@@ -232,10 +230,10 @@ class Validator extends BaseValidator
                     break;
             }
         }
-        
+
         return true;
     }
-    
+
     /**
      * Valida PIS/PASEP/NIS/NIT
      * @param string $attribute
