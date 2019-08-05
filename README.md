@@ -122,7 +122,7 @@ $this->validate($request, [
 ```
 ----------------------------------------------------------------------------------------------------------------------------
 
-##Combinando validação e formato
+## Combinando validação e formato
 
 No exemplo abaixo, fazemos um teste onde verificamos a formatação e a validade de um CPF ou CNPJ, para os casos onde a informação deva ser salva em um mesmo atributo:
 
@@ -134,7 +134,7 @@ $this->validate($request, [
 
 ----------------------------------------------------------------------------------------------------------------------------
 
-##Exemplo de uso em um controller
+## Exemplo de uso em um controller
 
 Método de validação de exemplo em um controller com todas as possibilidades de validação
 
@@ -157,7 +157,7 @@ public function store(Request $request)
 
 ----------------------------------------------------------------------------------------------------------------------------
 
-##Geradores de documentos para testes
+## Geradores de documentos para testes
 
 * **CNH** - http://4devs.com.br/gerador_de_cnh
 * **TÍTULO ELEITORAL** - http://4devs.com.br/gerador_de_titulo_de_eleitor
