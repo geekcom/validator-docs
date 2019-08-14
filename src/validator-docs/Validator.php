@@ -4,6 +4,13 @@ namespace geekcom\ValidatorDocs;
 
 use Illuminate\Validation\Validator as BaseValidator;
 
+use function preg_match;
+use function preg_replace;
+use function strlen;
+use function str_repeat;
+use function sprintf;
+use function substr;
+
 /**
  *
  * @author Daniel Rodrigues Lima
@@ -11,56 +18,25 @@ use Illuminate\Validation\Validator as BaseValidator;
  */
 class Validator extends BaseValidator
 {
-    /**
-     * Valida o formato do cpf
-     * @param string $attribute
-     * @param string $value
-     * @return boolean
-     */
     protected function validateFormatoCpf($attribute, $value)
     {
         return preg_match('/^\d{3}\.\d{3}\.\d{3}-\d{2}$/', $value) > 0;
     }
 
-    /**
-     * Valida o formato do cnpj
-     * @param string $attribute
-     * @param string $value
-     * @return boolean
-     */
     protected function validateFormatoCnpj($attribute, $value)
     {
         return preg_match('/^\d{2}\.\d{3}\.\d{3}\/\d{4}-\d{2}$/', $value) > 0;
     }
 
-    /**
-     * Valida o formato do cpf ou cnpj
-     * @param string $attribute
-     * @param string $value
-     * @return boolean
-     */
     protected function validateFormatoCpfCnpj($attribute, $value)
     {
         return $this->validateFormatoCpf($attribute, $value) || $this->validateFormatoCnpj($attribute, $value);
     }
 
-    /**
-     * Valida o formato do PIS/PASEP/NIS/NIT
-     * @param string $attribute
-     * @param string $value
-     * @return boolean
-     */
     protected function validateFormatoNis($attribute, $value)
     {
         return preg_match('/^\d{3}\.\d{5}\.\d{2}-\d{1}$/', $value) > 0;
     }
-
-    /**
-     * Valida CPF
-     * @param string $attribute
-     * @param string $value
-     * @return boolean
-     */
 
     protected function validateCpf($attribute, $value)
     {
@@ -85,12 +61,6 @@ class Validator extends BaseValidator
         return true;
     }
 
-    /**
-     * Valida CNPJ
-     * @param string $attribute
-     * @param string $value
-     * @return boolean
-     */
     protected function validateCnpj($attribute, $value)
     {
         $c = preg_replace('/\D/', '', $value);
@@ -116,28 +86,16 @@ class Validator extends BaseValidator
         return true;
     }
 
-    /**
-     * Valida CNPJ ou CPF
-     * @param string $attribute
-     * @param string $value
-     * @return boolean
-     */
     protected function validateCpfCnpj($attribute, $value)
     {
         return ($this->validateCpf($attribute, $value) || $this->validateCnpj($attribute, $value));
     }
 
     /**
-     * Valida CNH
-     * @param string $attribute
-     * @param string $value
-     * @return boolean
+     * Trecho retirado do respect validation
      */
-
     protected function validateCnh($attribute, $value)
     {
-        // Trecho retirado do respect validation
-
         $ret = false;
 
         if ((strlen($input = preg_replace('/[^\d]/', '', $value)) == 11)
@@ -146,22 +104,16 @@ class Validator extends BaseValidator
             $dsc = 0;
 
             for ($i = 0, $j = 9, $v = 0; $i < 9; ++$i, --$j) {
-
-                $v += (int)$input[$i] * $j;
-
+                $v += (int) $input[$i] * $j;
             }
 
             if (($vl1 = $v % 11) >= 10) {
-
                 $vl1 = 0;
                 $dsc = 2;
-
             }
 
             for ($i = 0, $j = 1, $v = 0; $i < 9; ++$i, ++$j) {
-
-                $v += (int)$input[$i] * $j;
-
+                $v += (int) $input[$i] * $j;
             }
 
             $vl2 = ($x = ($v % 11)) >= 10 ? 0 : $x - $dsc;
@@ -172,16 +124,8 @@ class Validator extends BaseValidator
         return $ret;
     }
 
-    /**
-     * Valida Titulo de Eleitor
-     * @param string $attribute
-     * @param string $value
-     * @return boolean
-     */
-
     protected function validateTituloEleitor($attribute, $value)
     {
-
         $input = preg_replace('/[^\d]/', '', $value);
 
         $uf = substr($input, -4, 2);
@@ -226,20 +170,12 @@ class Validator extends BaseValidator
             switch ($i) {
                 case '0':
                     $sequencia = $uf . $digito;
-
                     break;
             }
         }
 
         return true;
     }
-
-    /**
-     * Valida PIS/PASEP/NIS/NIT
-     * @param string $attribute
-     * @param string $value
-     * @return boolean
-     */
 
     protected function validateNis($attribute, $value)
     {
@@ -255,5 +191,4 @@ class Validator extends BaseValidator
 
         return ($nis[10] == (((10 * $d) % 11) % 10));
     }
-
 }

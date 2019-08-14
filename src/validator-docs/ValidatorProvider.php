@@ -23,7 +23,6 @@ class ValidatorProvider extends ServiceProvider
 
     public function boot()
     {
-
         $me = $this;
 
         $this->app['validator']->resolver(function ($translator, $data, $rules, $messages, $attributes) use ($me) {
@@ -66,7 +65,6 @@ class ValidatorProvider extends ServiceProvider
      */
     public function provides()
     {
-        return array();
+        return [];
     }
-
 }
