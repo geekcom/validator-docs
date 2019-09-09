@@ -1,9 +1,11 @@
 # LaraValidator Docs - Brasil
-_Validação de documentos do Brasil usando Laravel 5.*_
+_Validação de documentos do Brasil usando **Laravel 6**_
 
 [![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/geekcom/validator-docs/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/geekcom/validator-docs/?branch=master)
 [![Total Downloads](https://poser.pugx.org/geekcom/validator-docs/downloads)](https://packagist.org/packages/geekcom/validator-docs)
 [![License](https://poser.pugx.org/geekcom/validator-docs/license)](https://packagist.org/packages/geekcom/validator-docs)
+
+> Para a versão compatível com Laravel 5 consulte o branch https://github.com/geekcom/validator-docs/tree/5.x.x
 
 Biblioteca Laravel para validação de CPF, CNPJ, CPF/CNPJ (quando salvos no mesmo atributo), CNH, PIS/PASEP/NIT/NIS e Título de Eleitor.
 
@@ -13,7 +15,7 @@ No arquivo `composer.json`, adicione validator-docs como dependência do seu pro
 
 ```
 "require": {
-    "geekcom/validator-docs" : "1.*"
+    "geekcom/validator-docs" : "2.*"
  },
 ```
 
@@ -167,4 +169,4 @@ public function store(Request $request)
 
 Fique a vontade para contribuir fazendo um fork.
 
-Caso tenha alguma dúvida ou encontre algm bug, abra uma [issue](https://github.com/geekcom/validator-docs/issues) ou pesquise por issues antigas.
+Caso tenha alguma dúvida ou encontre algum bug, abra uma [issue](https://github.com/geekcom/validator-docs/issues) ou pesquise por issues antigas.
