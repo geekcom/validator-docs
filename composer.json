@@ -24,5 +24,12 @@
     "psr-4": {
       "geekcom\\ValidatorDocs\\Tests\\": "tests"
     }
-  }
+  },
+  "extra": {
+    "laravel": {
+        "providers": [
+            "geekcom\\ValidatorDocs\\ValidatorProvider"
+        ]
+    }
+},
 }
