@@ -9,10 +9,10 @@
     }
   ],
   "require": {
-    "laravel/framework": "^6.0"
+    "laravel/framework": "^6.0.*"
   },
   "require-dev": {
-    "laravel/laravel": "^6.0",
+    "laravel/laravel": "^6.0.*",
     "phpunit/phpunit": "^7.5"
   },
   "autoload": {
