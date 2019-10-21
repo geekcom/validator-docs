@@ -120,7 +120,9 @@ class Validator extends BaseValidator
                 $v += (int) $input[$i] * $j;
             }
 
-            $vl2 = $x = $v % 11 >= 10 ? 0 : $x - $dsc;
+            $x = $v % 11;
+
+            $vl2 =  $x >= 10 ? 0 : $x - $dsc;
 
             $ret = sprintf('%d%d', $vl1, $vl2) == substr($input, -2);
         }
