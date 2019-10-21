@@ -6,9 +6,9 @@ use Illuminate\Validation\Validator as BaseValidator;
 
 use function preg_match;
 use function preg_replace;
-use function strlen;
-use function str_repeat;
 use function sprintf;
+use function str_repeat;
+use function strlen;
 use function substr;
 
 /**
@@ -46,15 +46,17 @@ class Validator extends BaseValidator
             return false;
         }
 
-        for ($s = 10, $n = 0, $i = 0; $s >= 2; $n += $c[$i++] * $s--);
+        for ($s = 10, $n = 0, $i = 0; $s >= 2; $n += $c[$i++] * $s--) {
+        }
 
-        if ($c[9] != ((($n %= 11) < 2) ? 0 : 11 - $n)) {
+        if ($c[9] != (($n %= 11) < 2 ? 0 : 11 - $n)) {
             return false;
         }
 
-        for ($s = 11, $n = 0, $i = 0; $s >= 2; $n += $c[$i++] * $s--);
+        for ($s = 11, $n = 0, $i = 0; $s >= 2; $n += $c[$i++] * $s--) {
+        }
 
-        if ($c[10] != ((($n %= 11) < 2) ? 0 : 11 - $n)) {
+        if ($c[10] != (($n %= 11) < 2 ? 0 : 11 - $n)) {
             return false;
         }
 
@@ -71,15 +73,17 @@ class Validator extends BaseValidator
 
         $b = [6, 5, 4, 3, 2, 9, 8, 7, 6, 5, 4, 3, 2];
 
-        for ($i = 0, $n = 0; $i < 12; $n += $c[$i] * $b[++$i]);
+        for ($i = 0, $n = 0; $i < 12; $n += $c[$i] * $b[++$i]) {
+        }
 
-        if ($c[12] != ((($n %= 11) < 2) ? 0 : 11 - $n)) {
+        if ($c[12] != (($n %= 11) < 2 ? 0 : 11 - $n)) {
             return false;
         }
 
-        for ($i = 0, $n = 0; $i <= 12; $n += $c[$i] * $b[$i++]);
+        for ($i = 0, $n = 0; $i <= 12; $n += $c[$i] * $b[$i++]) {
+        }
 
-        if ($c[13] != ((($n %= 11) < 2) ? 0 : 11 - $n)) {
+        if ($c[13] != (($n %= 11) < 2 ? 0 : 11 - $n)) {
             return false;
         }
 
@@ -88,7 +92,7 @@ class Validator extends BaseValidator
 
     protected function validateCpfCnpj($attribute, $value)
     {
-        return ($this->validateCpf($attribute, $value) || $this->validateCnpj($attribute, $value));
+        return $this->validateCpf($attribute, $value) || $this->validateCnpj($attribute, $value);
     }
 
     /**
@@ -116,7 +120,7 @@ class Validator extends BaseValidator
                 $v += (int) $input[$i] * $j;
             }
 
-            $vl2 = ($x = ($v % 11)) >= 10 ? 0 : $x - $dsc;
+            $vl2 = $x = $v % 11 >= 10 ? 0 : $x - $dsc;
 
             $ret = sprintf('%d%d', $vl1, $vl2) == substr($input, -2);
         }
@@ -145,7 +149,7 @@ class Validator extends BaseValidator
             $fator = 9;
             $soma = 0;
 
-            for ($j = (strlen($sequencia) - 1); $j > -1; $j--) {
+            for ($j = strlen($sequencia) - 1; $j > -1; $j--) {
                 $soma += $sequencia[$j] * $fator;
 
                 if ($fator == $base) {
@@ -185,10 +189,10 @@ class Validator extends BaseValidator
             return false;
         }
 
-        for ($d = 0, $p = 2, $c = 9; $c >= 0; $c--, ($p < 9) ? $p++ : $p = 2) {
+        for ($d = 0, $p = 2, $c = 9; $c >= 0; $c--, $p < 9 ? $p++ : $p = 2) {
             $d += $nis[$c] * $p;
         }
 
-        return ($nis[10] == (((10 * $d) % 11) % 10));
+        return $nis[10] == (((10 * $d) % 11) % 10);
     }
 }
