@@ -163,7 +163,7 @@ final class TestValidator extends ValidatorTestCase
         $this->assertTrue($incorrect->fails());
     }
 
-    public function testNisormato()
+    public function testNisFormato()
     {
         $correct = \Validator::make(
             ['certo' => '201.73374.34-9'],
