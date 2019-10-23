@@ -7,7 +7,7 @@ _Validação de documentos do Brasil usando **Laravel 6**_
 
 > Para a versão compatível com Laravel 5 consulte o branch https://github.com/geekcom/validator-docs/tree/5.x.x
 
-Biblioteca Laravel para validação de CPF, CNPJ, CPF/CNPJ (quando salvos no mesmo atributo), CNH, PIS/PASEP/NIT/NIS e Título de Eleitor.
+Biblioteca Laravel para validação de CPF, CNPJ, CPF/CNPJ (quando salvos no mesmo atributo), CNH, PIS/PASEP/NIT/NIS, Título de Eleitor e Certidões(nascimento/casamento/óbito).
 
 ## Instalação
 
