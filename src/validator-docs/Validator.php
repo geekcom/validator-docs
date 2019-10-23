@@ -194,17 +194,18 @@ class Validator extends BaseValidator
 
     protected function validateCns($attribute, $value)
     {
-        // Remove não numericos
         $cns = preg_replace('/[^\d]/', '', $value);
 
-        // CNS definitivo começam em 1 ou 2 / CNS provisórios em 7, 8 ou 9
+        // CNSs definitivos começam em 1 ou 2 / CNSs provisórios em 7, 8 ou 9
         if (preg_match("/[1-2][0-9]{10}00[0-1][0-9]/", $cns) || preg_match("/[7-9][0-9]{14}/", $cns)) {
             return $this->somaPonderadaCns($cns) % 11 == 0;
         }
+
         return false;
     }
 
-    private function somaPonderadaCns($value) {
+    private function somaPonderadaCns($value)
+    {
         $soma = 0;
 
         for ($i = 0; $i < strlen($value); $i++) {
