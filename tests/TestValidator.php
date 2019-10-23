@@ -180,4 +180,43 @@ final class TestValidator extends ValidatorTestCase
         $this->assertTrue($incorrect->fails());
     }
 
+    public function testCertidao()
+    {
+        $correct = \Validator::make(
+            ['certo' => '659447 02 55 9015 1 99679 468 2559590-16'],
+            ['certo' => 'certidao']
+        );
+
+        $incorrect = \Validator::make(
+            ['errado' => '659447 02 55 2015 1 27861 468 2559590-32'],
+            ['errado' => 'certidao']
+        );
+
+        $this->assertTrue($correct->passes());
+        $this->assertTrue($incorrect->fails());
+    }
+
+    public function testCertidaoFormato()
+    {
+        $correct = \Validator::make(
+            ['certo' => '434546.02.55.2019.1.71037.134.6484858-10'],
+            ['certo' => 'formato-certidao']
+        );
+
+        $incorrect = \Validator::make(
+            ['errado' => '201.733.7434-9'],
+            ['errado' => 'formato-certidao']
+        );
+
+        $this->assertTrue($correct->passes());
+        $this->assertTrue($incorrect->fails());
+
+        // com ' ' no lugar de '.'
+        $correct = \Validator::make(
+            ['certo' => '434546 02 55 2019 1 71037 134 6484858 10'],
+            ['certo' => 'formato-certidao']
+        );
+        $this->assertTrue($correct->passes());
+    }
+
 }

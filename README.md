@@ -91,6 +91,14 @@ $this->validate($request, [
 ]);
 ```
 
+* **certidao** - Verifica se uma certidão de nascimento/casamento/óbito é válida.
+
+```php
+$this->validate($request, [
+    'nis' => 'required|certidao',
+]);
+```
+
 * **formato_cnpj** - Verifica se o formato de um CNPJ é válida. ( 99.999.999/9999-99 )
 
 ```php
@@ -120,6 +128,14 @@ $this->validate($request, [
 ```php
 $this->validate($request, [
     'formato_nis' => 'required|formato_nis',
+]);
+```
+
+* **formato_certidao** - Verifica se o formato de uma certidão é válida. ( 99999.99.99.9999.9.99999.999.9999999-99 ou 99999 99 99 9999 9 99999 999 9999999 99)
+
+```php
+$this->validate($request, [
+    'formato_certidao' => 'required|formato_certidao',
 ]);
 ```
 ----------------------------------------------------------------------------------------------------------------------------
@@ -166,6 +182,7 @@ public function store(Request $request)
 * **CNPJ** - http://www.geradorcnpj.com/
 * **CPF** - http://geradordecpf.org
 * **NIS** - https://www.4devs.com.br/gerador_de_pis_pasep
+* **CERTIDÃO** - https://www.treinaweb.com.br/ferramentas-para-desenvolvedores/gerador/certidao
 
 Fique a vontade para contribuir fazendo um fork.
 

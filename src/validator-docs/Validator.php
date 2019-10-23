@@ -38,6 +38,14 @@ class Validator extends BaseValidator
         return preg_match('/^\d{3}\.\d{5}\.\d{2}-\d{1}$/', $value) > 0;
     }
 
+    /*
+     * O Número de Matrícula tem a configuração aaaaaa.bb.cc.dddd.e.fffff.ggg.hhhhhhh-ii
+     */
+    protected function validateFormatoCertidao($attribute, $value)
+    {
+        return preg_match('/^\d{6}[. ]\d{2}[. ]\d{2}[. ]\d{4}[. ]\d{1}[. ]\d{5}[. ]\d{3}[. ]\d{7}[- ]\d{2}$/', $value) > 0;
+    }
+
     protected function validateCpf($attribute, $value)
     {
         $c = preg_replace('/\D/', '', $value);
@@ -190,5 +198,49 @@ class Validator extends BaseValidator
         }
 
         return ($nis[10] == (((10 * $d) % 11) % 10));
+    }
+
+    /*
+     * CERTIDÃO DE NASCIMENTO/CASAMENTO/ÓBITO
+     * Fonte: http://ghiorzi.org/DVnew.htm#zc
+     *
+     * Nota: se o resto for "10", o DV será "1"
+     */
+    protected function validateCertidao($attribute, $value)
+    {
+        // Remove não numericos
+        $certidao = preg_replace('/[^\d]/', '', $value);
+
+        if (!preg_match("/[0-9]{32}/", $certidao)) {
+            return false;
+        }
+
+        $num = substr($certidao, 0, -2);
+        $dv = substr($certidao, -2);
+
+        $dv1 = $this->somaPonderadaCertidao($num) % 11;
+        $dv1 = $dv1 > 9 ? 1 : $dv1;
+        $dv2 = $this->somaPonderadaCertidao($num.$dv1) % 11;
+        $dv2 = $dv2 > 9 ? 1 : $dv2;
+
+        // Compara o dv recebido com os dois numeros calculados
+        if ($dv === $dv1.$dv2) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+
+    private function somaPonderadaCertidao($value) {
+        $soma = 0;
+
+        $multiplicador = 32 - strlen($value);
+        for ($i = 0; $i < strlen($value); $i++) {
+            $soma += $value[$i] * $multiplicador;
+
+            $multiplicador += 1;
+            $multiplicador = $multiplicador > 10 ? 0 : $multiplicador;
+        }
+        return $soma;
     }
 }
