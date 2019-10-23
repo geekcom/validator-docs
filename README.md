@@ -7,7 +7,7 @@ _Validação de documentos do Brasil usando **Laravel 6**_
 
 > Para a versão compatível com Laravel 5 consulte o branch https://github.com/geekcom/validator-docs/tree/5.x.x
 
-Biblioteca Laravel para validação de CPF, CNPJ, CPF/CNPJ (quando salvos no mesmo atributo), CNH, PIS/PASEP/NIT/NIS e Título de Eleitor.
+Biblioteca Laravel para validação de CPF, CNPJ, CPF/CNPJ (quando salvos no mesmo atributo), CNH, PIS/PASEP/NIT/NIS, Título de Eleitor e Cartão Nacional de Saúde(CNS).
 
 ## Instalação
 
@@ -15,7 +15,7 @@ No arquivo `composer.json`, adicione validator-docs como dependência do seu pro
 
 ```
 "require": {
-    "geekcom/validator-docs" : "2.*"
+    "geekcom/validator-docs" : "^3.0"
  },
 ```
 
@@ -29,12 +29,6 @@ Ou simplesmente execute o comando:
 
 ```
 composer require geekcom/validator-docs
-```
-
-Após a instalação, adicione ao arquivo `config/app.php` ao array `providers` a seguinte linha:
-
-```php
-geekcom\ValidatorDocs\ValidatorProvider::class
 ```
 
 ----------------------------------------------------------------------------------------------------------------------------
@@ -91,6 +85,14 @@ $this->validate($request, [
 ]);
 ```
 
+* **cns** - Verifica se um Cartão Nciona de Saúde (CNS) é válido.
+
+```php
+$this->validate($request, [
+    'cns' => 'required|cns',
+]);
+```
+
 * **formato_cnpj** - Verifica se o formato de um CNPJ é válida. ( 99.999.999/9999-99 )
 
 ```php
@@ -126,7 +128,7 @@ $this->validate($request, [
 
 ## Combinando validação e formato
 
-No exemplo abaixo, fazemos um teste onde verificamos a formatação e a validade de um CPF ou CNPJ, para os casos onde a informação deva ser salva em um mesmo atributo:
+No exemplo abaixo, fazemos um teste onde verificamos a formatação e a validade de um CPF ou CNPJ, para os casos onde a informação deve ser salva em um mesmo atributo:
 
 ```php
 $this->validate($request, [
@@ -151,6 +153,7 @@ public function store(Request $request)
         'cnh' => 'required|cnh',
         'titulo_eleitor' => 'required|titulo_eleitor',
         'nis' => 'required|nis',
+        'cns' => 'required|cns',
     ]);
 
     dd($data);
@@ -166,6 +169,7 @@ public function store(Request $request)
 * **CNPJ** - http://www.geradorcnpj.com/
 * **CPF** - http://geradordecpf.org
 * **NIS** - https://www.4devs.com.br/gerador_de_pis_pasep
+* **CNS** - https://geradornv.com.br/gerador-cns/
 
 Fique a vontade para contribuir fazendo um fork.
 
