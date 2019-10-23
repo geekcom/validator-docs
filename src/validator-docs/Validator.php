@@ -264,5 +264,7 @@ class Validator extends BaseValidator
             $multiplicador += 1;
             $multiplicador = $multiplicador > 10 ? 0 : $multiplicador;
         }
+
+        return $soma;
     }
 }
