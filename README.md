@@ -95,7 +95,7 @@ $this->validate($request, [
 
 ```php
 $this->validate($request, [
-    'nis' => 'required|certidao',
+    'certidao' => 'required|certidao',
 ]);
 ```
 
