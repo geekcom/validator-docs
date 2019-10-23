@@ -145,7 +145,7 @@ final class TestValidator extends ValidatorTestCase
 
         $this->assertTrue($incorrect->fails());
     }
-    
+
     public function testNis()
     {
         $correct = \Validator::make(
@@ -179,7 +179,38 @@ final class TestValidator extends ValidatorTestCase
 
         $this->assertTrue($incorrect->fails());
     }
+  
+    public function testCns()
+    {
+        // Definitiva
+        $correct = \Validator::make(
+            ['certo' => '116 3876 9194 0009'],
+            ['certo' => 'cns']
+        );
 
+        $incorrect = \Validator::make(
+            ['errado' => '116 5698 9194 0009'],
+            ['errado' => 'cns']
+        );
+
+        $this->assertTrue($correct->passes());
+        $this->assertTrue($incorrect->fails());
+
+        // Provisoria
+        $correct = \Validator::make(
+            ['certo' => '892 1623 5477 0008'],
+            ['certo' => 'cns']
+        );
+
+        $incorrect = \Validator::make(
+            ['errado' => '892 2641 5477 0008'],
+            ['errado' => 'cns']
+        );
+
+        $this->assertTrue($correct->passes());
+        $this->assertTrue($incorrect->fails());
+    }
+  
     public function testCertidao()
     {
         $correct = \Validator::make(
@@ -218,5 +249,4 @@ final class TestValidator extends ValidatorTestCase
         );
         $this->assertTrue($correct->passes());
     }
-
 }
