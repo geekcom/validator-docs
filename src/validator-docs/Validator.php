@@ -1,12 +1,14 @@
 <?php
 
+declare(strict_types=1);
+
 namespace geekcom\ValidatorDocs;
 
 use Illuminate\Validation\Validator as BaseValidator;
 
 use function preg_match;
 use function preg_replace;
-use function strlen;
+use function mb_strlen;
 use function str_repeat;
 use function sprintf;
 use function substr;
@@ -18,39 +20,36 @@ use function substr;
  */
 class Validator extends BaseValidator
 {
-    protected function validateFormatoCpf($attribute, $value)
+    protected function validateFormatoCpf($attribute, $value): bool
     {
         return preg_match('/^\d{3}\.\d{3}\.\d{3}-\d{2}$/', $value) > 0;
     }
 
-    protected function validateFormatoCnpj($attribute, $value)
+    protected function validateFormatoCnpj($attribute, $value): bool
     {
         return preg_match('/^\d{2}\.\d{3}\.\d{3}\/\d{4}-\d{2}$/', $value) > 0;
     }
 
-    protected function validateFormatoCpfCnpj($attribute, $value)
+    protected function validateFormatoCpfCnpj($attribute, $value): bool
     {
         return $this->validateFormatoCpf($attribute, $value) || $this->validateFormatoCnpj($attribute, $value);
     }
 
-    protected function validateFormatoNis($attribute, $value)
+    protected function validateFormatoNis($attribute, $value): bool
     {
         return preg_match('/^\d{3}\.\d{5}\.\d{2}-\d{1}$/', $value) > 0;
     }
 
-    /*
-     * O Número de Matrícula tem a configuração aaaaaa.bb.cc.dddd.e.fffff.ggg.hhhhhhh-ii
-     */
-    protected function validateFormatoCertidao($attribute, $value)
+    protected function validateFormatoCertidao($attribute, $value): bool
     {
         return preg_match('/^\d{6}[. ]\d{2}[. ]\d{2}[. ]\d{4}[. ]\d{1}[. ]\d{5}[. ]\d{3}[. ]\d{7}[- ]\d{2}$/', $value) > 0;
     }
 
-    protected function validateCpf($attribute, $value)
+    protected function validateCpf($attribute, $value): bool
     {
-        $c = preg_replace('/\D/', '', $value);
+        $c = $this->removeCaracteresNaoNumericos($value);
 
-        if (strlen($c) != 11 || preg_match("/^{$c[0]}{11}$/", $c)) {
+        if (mb_strlen($c) != 11 || preg_match("/^{$c[0]}{11}$/", $c)) {
             return false;
         }
 
@@ -69,11 +68,11 @@ class Validator extends BaseValidator
         return true;
     }
 
-    protected function validateCnpj($attribute, $value)
+    protected function validateCnpj($attribute, $value): bool
     {
-        $c = preg_replace('/\D/', '', $value);
+        $c = $this->removeCaracteresNaoNumericos($value);
 
-        if (strlen($c) != 14 || preg_match("/^{$c[0]}{14}$/", $c)) {
+        if (mb_strlen($c) != 14 || preg_match("/^{$c[0]}{14}$/", $c)) {
             return false;
         }
 
@@ -94,7 +93,7 @@ class Validator extends BaseValidator
         return true;
     }
 
-    protected function validateCpfCnpj($attribute, $value)
+    protected function validateCpfCnpj($attribute, $value): bool
     {
         return ($this->validateCpf($attribute, $value) || $this->validateCnpj($attribute, $value));
     }
@@ -102,44 +101,43 @@ class Validator extends BaseValidator
     /**
      * Trecho retirado do respect validation
      */
-    protected function validateCnh($attribute, $value)
+    protected function validateCnh($attribute, $value): bool
     {
-        $ret = false;
-
-        if ((strlen($input = preg_replace('/[^\d]/', '', $value)) == 11)
-            && (str_repeat($input[1], 11) != $input)
-        ) {
-            $dsc = 0;
-
-            for ($i = 0, $j = 9, $v = 0; $i < 9; ++$i, --$j) {
-                $v += (int) $input[$i] * $j;
-            }
-
-            if (($vl1 = $v % 11) >= 10) {
-                $vl1 = 0;
-                $dsc = 2;
-            }
-
-            for ($i = 0, $j = 1, $v = 0; $i < 9; ++$i, ++$j) {
-                $v += (int) $input[$i] * $j;
-            }
-
-            $vl2 = ($x = ($v % 11)) >= 10 ? 0 : $x - $dsc;
-
-            $ret = sprintf('%d%d', $vl1, $vl2) == substr($input, -2);
+        if (!is_scalar($value)) {
+            return false;
         }
 
-        return $ret;
+        $value = $this->removeCaracteresNaoNumericos($value);
+
+        if (mb_strlen($value) != 11 || ((int) $value === 0)) {
+            return false;
+        }
+
+        for ($c = $s1 = $s2 = 0, $p = 9; $c < 9; $c++, $p--) {
+            $s1 += (int) $value[$c] * $p;
+            $s2 += (int) $value[$c] * (10 - $p);
+        }
+
+        $dv1 = $s1 % 11;
+        if ($value[9] != ($dv1 > 9) ? 0 : $dv1) {
+            return false;
+        }
+
+        $dv2 = $s2 % 11 - ($dv1 > 9 ? 2 : 0);
+
+        $check = $dv2 < 0 ? $dv2 + 11 : $dv2 > 9 ? 0 : $dv2;
+
+        return $value[10] == $check;
     }
 
-    protected function validateTituloEleitor($attribute, $value)
+    protected function validateTituloEleitor($attribute, $value): bool
     {
-        $input = preg_replace('/[^\d]/', '', $value);
+        $input = $this->removeCaracteresNaoNumericos($value);
 
         $uf = substr($input, -4, 2);
 
-        if (((strlen($input) < 5) || (strlen($input) > 13)) ||
-            (str_repeat($input[1], strlen($input)) == $input) ||
+        if (((mb_strlen($input) < 5) || (mb_strlen($input) > 13)) ||
+            (str_repeat($input[1], mb_strlen($input)) == $input) ||
             ($uf < 1 || $uf > 28)) {
             return false;
         }
@@ -153,7 +151,7 @@ class Validator extends BaseValidator
             $fator = 9;
             $soma = 0;
 
-            for ($j = (strlen($sequencia) - 1); $j > -1; $j--) {
+            for ($j = (mb_strlen($sequencia) - 1); $j > -1; $j--) {
                 $soma += $sequencia[$j] * $fator;
 
                 if ($fator == $base) {
@@ -185,11 +183,11 @@ class Validator extends BaseValidator
         return true;
     }
 
-    protected function validateNis($attribute, $value)
+    protected function validateNis($attribute, $value): bool
     {
-        $nis = sprintf('%011s', preg_replace('{\D}', '', $value));
+        $nis = sprintf('%011s', $this->removeCaracteresNaoNumericos($value));
 
-        if (strlen($nis) != 11 || preg_match("/^{$nis[0]}{11}$/", $nis)) {
+        if (mb_strlen($nis) != 11 || preg_match("/^{$nis[0]}{11}$/", $nis)) {
             return false;
         }
 
@@ -200,9 +198,9 @@ class Validator extends BaseValidator
         return ($nis[10] == (((10 * $d) % 11) % 10));
     }
 
-    protected function validateCns($attribute, $value)
+    protected function validateCns($attribute, $value): bool
     {
-        $cns = preg_replace('/[^\d]/', '', $value);
+        $cns = $this->removeCaracteresNaoNumericos($value);
 
         // CNSs definitivos começam em 1 ou 2 / CNSs provisórios em 7, 8 ou 9
         if (preg_match("/[1-2][0-9]{10}00[0-1][0-9]/", $cns) || preg_match("/[7-9][0-9]{14}/", $cns)) {
@@ -212,27 +210,26 @@ class Validator extends BaseValidator
         return false;
     }
 
-    private function somaPonderadaCns($value)
+    private function somaPonderadaCns($value): int
     {
         $soma = 0;
 
-        for ($i = 0; $i < strlen($value); $i++) {
+        for ($i = 0; $i < mb_strlen($value); $i++) {
             $soma += $value[$i] * (15 - $i);
         }
 
         return $soma;
     }
-  
+
     /*
      * CERTIDÃO DE NASCIMENTO/CASAMENTO/ÓBITO
      * Fonte: http://ghiorzi.org/DVnew.htm#zc
      *
      * Nota: se o resto for "10", o DV será "1"
      */
-    protected function validateCertidao($attribute, $value)
+    protected function validateCertidao($attribute, $value): bool
     {
-        // Remove não numericos
-        $certidao = preg_replace('/[^\d]/', '', $value);
+        $certidao = $this->removeCaracteresNaoNumericos($value);
 
         if (!preg_match("/[0-9]{32}/", $certidao)) {
             return false;
@@ -249,16 +246,19 @@ class Validator extends BaseValidator
         // Compara o dv recebido com os dois numeros calculados
         if ($dv === $dv1.$dv2) {
             return true;
-        } else {
-            return false;
         }
+
+        return false;
     }
 
-    private function somaPonderadaCertidao($value) {
+    private function somaPonderadaCertidao($value): int
+    {
         $soma = 0;
 
-        $multiplicador = 32 - strlen($value);
-        for ($i = 0; $i < strlen($value); $i++) {
+        $multiplicador = 32 - mb_strlen($value);
+
+        for ($i = 0; $i < mb_strlen($value); $i++) {
+
             $soma += $value[$i] * $multiplicador;
 
             $multiplicador += 1;
@@ -266,5 +266,10 @@ class Validator extends BaseValidator
         }
 
         return $soma;
+    }
+
+    private function removeCaracteresNaoNumericos($value): string
+    {
+        return preg_replace('/[^\d]/', '', $value);
     }
 }

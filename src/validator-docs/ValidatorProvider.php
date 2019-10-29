@@ -6,7 +6,6 @@ use Illuminate\Support\ServiceProvider;
 
 class ValidatorProvider extends ServiceProvider
 {
-
     /**
      * Indicates if loading of the provider is deferred.
      *
@@ -14,13 +13,11 @@ class ValidatorProvider extends ServiceProvider
      */
     protected $defer = false;
 
-
     /**
      * Bootstrap the application events.
      *
      * @return void
      */
-
     public function boot()
     {
         $me = $this;
@@ -31,7 +28,6 @@ class ValidatorProvider extends ServiceProvider
             return new Validator($translator, $data, $rules, $messages, $attributes);
         });
     }
-
 
     protected function getMessages()
     {
