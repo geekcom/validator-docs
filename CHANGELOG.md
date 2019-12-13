@@ -2,7 +2,15 @@
 
 <!-- dumped content start -->
 
-[3.3.0]
+## [3.3.1]
+
+- [#50] minor correction, update doc, Thanks to [@geekcom]
+
+<!-- dumped content end -->
+
+<!-- dumped content start -->
+
+## [3.3.0]
 
 - [#49] solved: complexity, update: tests, Thanks to [@geekcom]
 
@@ -90,3 +98,4 @@
 [@andrergcosta]: https://github.com/andrergcosta
 [@MrEko]: https://github.com/MrEko
 [#49]: https://github.com/geekcom/validator-docs/pull/49
+[#50]: https://github.com/geekcom/validator-docs/pull/50
