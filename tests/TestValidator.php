@@ -6,7 +6,8 @@ use Illuminate\Support\Facades\Validator;
 
 final class TestValidator extends ValidatorTestCase
 {
-    public function testCpf()
+    /** @test **/
+    public function cpf()
     {
         $correct = Validator::make(
             ['certo' => '094.050.986-59'],
@@ -23,7 +24,8 @@ final class TestValidator extends ValidatorTestCase
         $this->assertTrue($incorrect->fails());
     }
 
-    public function testCpfFormato()
+    /** @test **/
+    public function cpfFormato()
     {
         $correct = Validator::make(
             ['certo' => '094.050.986-59'],
@@ -40,8 +42,8 @@ final class TestValidator extends ValidatorTestCase
         $this->assertTrue($incorrect->fails());
     }
 
-
-    public function testCnpj()
+    /** @test **/
+    public function cnpj()
     {
         $correct = Validator::make(
             ['certo' => '53.084.587/0001-20'],
@@ -58,8 +60,8 @@ final class TestValidator extends ValidatorTestCase
         $this->assertTrue($incorrect->fails());
     }
 
-
-    public function testCnpjFormato()
+    /** @test **/
+    public function cnpjFormato()
     {
         $correct = Validator::make(
             ['certo' => '53.084.587/0001-20'],
@@ -76,8 +78,8 @@ final class TestValidator extends ValidatorTestCase
         $this->assertTrue($incorrect->fails());
     }
 
-
-    public function testCpfCnpj()
+    /** @test **/
+    public function cpfAndCnpjInTheSameAttribute()
     {
         $correct = Validator::make(
             ['certo' => '53.084.587/0001-20'],
@@ -94,8 +96,8 @@ final class TestValidator extends ValidatorTestCase
         $this->assertTrue($incorrect->fails());
     }
 
-
-    public function testCpfCnpjFormato()
+    /** @test **/
+    public function cpfCnpjFormato()
     {
         $correct = Validator::make(
             ['certo' => '094.050.986-59'],
@@ -112,8 +114,8 @@ final class TestValidator extends ValidatorTestCase
         $this->assertTrue($incorrect->fails());
     }
 
-
-    public function testCnh()
+    /** @test **/
+    public function cnh()
     {
         $correct = Validator::make(
             ['certo' => '96784547943'],
@@ -130,8 +132,8 @@ final class TestValidator extends ValidatorTestCase
         $this->assertTrue($incorrect->fails());
     }
 
-
-    public function testTituloEleitor()
+    /** @test **/
+    public function tituloEleitoral()
     {
         $correct = Validator::make(
             ['certo' => '3021260'],
@@ -148,7 +150,8 @@ final class TestValidator extends ValidatorTestCase
         $this->assertTrue($incorrect->fails());
     }
 
-    public function testNis()
+    /** @test **/
+    public function nis()
     {
         $correct = Validator::make(
             ['certo' => '201.73374.34-9'],
@@ -165,7 +168,8 @@ final class TestValidator extends ValidatorTestCase
         $this->assertTrue($incorrect->fails());
     }
 
-    public function testNisFormato()
+    /** @test **/
+    public function nisFormato()
     {
         $correct = Validator::make(
             ['certo' => '201.73374.34-9'],
@@ -182,7 +186,8 @@ final class TestValidator extends ValidatorTestCase
         $this->assertTrue($incorrect->fails());
     }
 
-    public function testCns()
+    /** @test **/
+    public function cns()
     {
         // Definitiva
         $correct = Validator::make(
@@ -198,7 +203,7 @@ final class TestValidator extends ValidatorTestCase
         $this->assertTrue($correct->passes());
         $this->assertTrue($incorrect->fails());
 
-        // Provisoria
+        // Provisória
         $correct = Validator::make(
             ['certo' => '892 1623 5477 0008'],
             ['certo' => 'cns']
@@ -213,7 +218,8 @@ final class TestValidator extends ValidatorTestCase
         $this->assertTrue($incorrect->fails());
     }
 
-    public function testCertidao()
+    /** @test **/
+    public function certidao()
     {
         $correct = Validator::make(
             ['certo' => '659447 02 55 9015 1 99679 468 2559590-16'],
@@ -229,7 +235,8 @@ final class TestValidator extends ValidatorTestCase
         $this->assertTrue($incorrect->fails());
     }
 
-    public function testCertidaoFormato()
+    /** @test **/
+    public function certidaoFormato()
     {
         $correct = Validator::make(
             ['certo' => '434546.02.55.2019.1.71037.134.6484858-10'],
