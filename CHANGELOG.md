@@ -2,6 +2,14 @@
 
 <!-- dumped content start -->
 
+[3.3.0]
+
+- [#49] solved: complexity, update: tests, Thanks to [@geekcom]
+
+<!-- dumped content end -->
+
+<!-- dumped content start -->
+
 ## Unreleased
 
 - [#48] added support for changelogs, Thanks to [@geekcom]
@@ -81,3 +89,4 @@
 [@geekcom]: https://github.com/geekcom
 [@andrergcosta]: https://github.com/andrergcosta
 [@MrEko]: https://github.com/MrEko
+[#49]: https://github.com/geekcom/validator-docs/pull/49

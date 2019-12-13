@@ -14,11 +14,11 @@ final class Cnh extends Sanitization
      */
     public function validateCnh($attribute, $value): bool
     {
-        $value = $this->sanitize($value);
-
         if (!is_scalar($value)) {
             return false;
         }
+
+        $value = $this->sanitize($value);
 
         if (mb_strlen($value) != 11 || ((int) $value === 0)) {
             return false;
