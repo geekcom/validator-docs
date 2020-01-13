@@ -2,6 +2,16 @@
 
 <!-- dumped content start -->
 
+## [3.3.2]
+
+- [#55] Igualando develop e master, Thanks to [@geekcom]
+- [#54] Arrumando cnh, Thanks to [@MrEko]
+- [#51] update CHANGELOG.md, Thanks to [@geekcom]
+
+<!-- dumped content end -->
+
+<!-- dumped content start -->
+
 ## [3.3.1]
 
 - [#50] minor correction, update doc, Thanks to [@geekcom]
@@ -99,3 +109,6 @@
 [@MrEko]: https://github.com/MrEko
 [#49]: https://github.com/geekcom/validator-docs/pull/49
 [#50]: https://github.com/geekcom/validator-docs/pull/50
+[#55]: https://github.com/geekcom/validator-docs/pull/55
+[#54]: https://github.com/geekcom/validator-docs/pull/54
+[#51]: https://github.com/geekcom/validator-docs/pull/51
