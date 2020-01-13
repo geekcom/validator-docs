@@ -10,7 +10,8 @@ use function is_scalar;
 final class Cnh extends Sanitization
 {
     /**
-     * Trecho retirado do respect validation
+     * @author Evandro Kondrat
+     * Trecho reescrito com base no algoritmo passado pelo Detran-PR
      */
     public function validateCnh($attribute, $value): bool
     {
@@ -24,20 +25,32 @@ final class Cnh extends Sanitization
             return false;
         }
 
-        for ($c = $s1 = $s2 = 0, $p = 9; $c < 9; $c++, $p--) {
-            $s1 += (int) $value[$c] * $p;
-            $s2 += (int) $value[$c] * (10 - $p);
+        $parcial = substr($value, 0, 9);
+
+        for ($i = 0 , $j = 2, $s = 0; $i < mb_strlen($parcial); $i++, $j++) {
+            $s += (int) $parcial[$i] * $j;
         }
 
-        $dv1 = $s1 % 11;
-        if ($value[9] != ($dv1 > 9) ? 0 : $dv1) {
-            return false;
+        $resto = $s % 11;
+        if ($resto <= 1) {
+            $dv1 = 0;
+        } else {
+            $dv1 = 11 - $resto;
         }
 
-        $dv2 = $s2 % 11 - ($dv1 > 9 ? 2 : 0);
+        $parcial = $dv1.$parcial;
 
-        $check = $dv2 < 0 ? $dv2 + 11 : ($dv2 > 9 ? 0 : $dv2);
+        for ($i = 0, $j = 2, $s = 0; $i < mb_strlen($parcial); $i++, $j++) {
+            $s += (int) $parcial[$i] * $j;
+        }
 
-        return $value[10] == $check;
+        $resto = $s % 11;
+        if ($resto <= 1) {
+            $dv2 = 0;
+        } else {
+            $dv2 = 11 - $resto;
+        }
+
+        return $dv1.$dv2 == substr($value, -2);
     }
 }
