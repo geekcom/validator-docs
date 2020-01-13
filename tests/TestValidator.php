@@ -130,6 +130,13 @@ final class TestValidator extends ValidatorTestCase
         $this->assertTrue($correct->passes());
 
         $this->assertTrue($incorrect->fails());
+
+        $correct = \Validator::make(
+            ['certo' => '04463004100'],
+            ['certo' => 'cnh']
+        );
+
+        $this->assertTrue($correct->passes());
     }
 
     /** @test **/
