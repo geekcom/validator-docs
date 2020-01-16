@@ -16,9 +16,11 @@ final class TituloEleitoral extends Sanitization
 
         $uf = substr($input, -4, 2);
 
-        if (((mb_strlen($input) < 5) || (mb_strlen($input) > 13)) ||
+        if (
+            ((mb_strlen($input) < 5) || (mb_strlen($input) > 13)) ||
             (str_repeat($input[1], mb_strlen($input)) == $input) ||
-            ($uf < 1 || $uf > 28)) {
+            ($uf < 1 || $uf > 28)
+        ) {
             return false;
         }
 

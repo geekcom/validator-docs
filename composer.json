@@ -41,7 +41,7 @@
     "phpcbf" : "phpcbf --standard=PSR12 -n src",
     "unit": "phpunit --coverage-clover ./tests/log/clover.xml --colors=always",
     "unit-html": "php -d phar.readonly=0 vendor/bin/phpunit --coverage-html ./tests/log/ --colors=always",
-    "phpstan": "phpstan analyse src --level 8",
+    "phpstan": "phpstan analyse src --level 0",
     "test": [
       "@phpcs",
       "@unit",

@@ -38,7 +38,7 @@ final class Cnh extends Sanitization
             $dv1 = 11 - $resto;
         }
 
-        $parcial = $dv1.$parcial;
+        $parcial = $dv1 . $parcial;
 
         for ($i = 0, $j = 2, $s = 0; $i < mb_strlen($parcial); $i++, $j++) {
             $s += (int) $parcial[$i] * $j;
@@ -51,6 +51,6 @@ final class Cnh extends Sanitization
             $dv2 = 11 - $resto;
         }
 
-        return $dv1.$dv2 == substr($value, -2);
+        return $dv1 . $dv2 == substr($value, -2);
     }
 }

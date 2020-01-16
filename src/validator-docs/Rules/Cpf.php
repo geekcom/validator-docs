@@ -17,13 +17,19 @@ final class Cpf extends Sanitization
             return false;
         }
 
-        for ($s = 10, $n = 0, $i = 0; $s >= 2; $n += $c[$i++] * $s--);
+        for (
+            $s = 10, $n = 0, $i = 0; $s >= 2; $n += $c[$i++] * $s--
+        ) {
+        }
 
         if ($c[9] != ((($n %= 11) < 2) ? 0 : 11 - $n)) {
             return false;
         }
 
-        for ($s = 11, $n = 0, $i = 0; $s >= 2; $n += $c[$i++] * $s--);
+        for (
+            $s = 11, $n = 0, $i = 0; $s >= 2; $n += $c[$i++] * $s--
+        ) {
+        }
 
         if ($c[10] != ((($n %= 11) < 2) ? 0 : 11 - $n)) {
             return false;
