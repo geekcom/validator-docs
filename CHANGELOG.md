@@ -2,6 +2,18 @@
 
 <!-- dumped content start -->
 
+## [3.4.0]
+
+- [#60] atualizados, CI, Thanks to [@geekcom]
+- [#59] suporte a coverage, Thanks to [@geekcom]
+- [#58] suporte a travisCI, Thanks to [@geekcom]
+- [#57] Develop, Thanks to [@geekcom]
+- [#56] Develop, Thanks to [@geekcom]
+
+<!-- dumped content end -->
+
+<!-- dumped content start -->
+
 ## [3.3.2]
 
 - [#55] Igualando develop e master, Thanks to [@geekcom]
