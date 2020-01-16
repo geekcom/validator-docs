@@ -1,0 +1,15 @@
+language: php
+
+php:
+  - 7.4
+
+before_script:
+  - composer self-update
+  - travis_retry composer update --no-interaction --no-ansi --no-progress --no-suggest --optimize-autoloader
+  - composer install --prefer-source --no-interaction --dev
+
+script:
+  - composer test
+
+after_success:
+  - php vendor/bin/php-coveralls --verbose
