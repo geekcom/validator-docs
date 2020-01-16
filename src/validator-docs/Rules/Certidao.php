@@ -29,11 +29,11 @@ final class Certidao extends Sanitization
 
         $dv1 = $this->somaPonderadaCertidao($num) % 11;
         $dv1 = $dv1 > 9 ? 1 : $dv1;
-        $dv2 = $this->somaPonderadaCertidao($num.$dv1) % 11;
+        $dv2 = $this->somaPonderadaCertidao($num . $dv1) % 11;
         $dv2 = $dv2 > 9 ? 1 : $dv2;
 
         // Compara o dv recebido com os dois numeros calculados
-        if ($dv === $dv1.$dv2) {
+        if ($dv === $dv1 . $dv2) {
             return true;
         }
 
@@ -47,7 +47,6 @@ final class Certidao extends Sanitization
         $multiplicador = 32 - mb_strlen($value);
 
         for ($i = 0; $i < mb_strlen($value); $i++) {
-
             $soma += $value[$i] * $multiplicador;
 
             $multiplicador += 1;
