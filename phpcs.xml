@@ -1,6 +1,16 @@
 <?xml version="1.0"?>
 <ruleset>
-    <file>./</file>
-    <exclude-pattern>./vendor/*</exclude-pattern>
-    <rule ref="PSR1" />
+    <arg name="basepath" value="."/>
+    <arg name="extensions" value="php"/>
+    <arg name="parallel" value="80"/>
+    <arg name="cache" value=".phpcs-cache"/>
+    <arg name="colors"/>
+
+    <arg value="p"/>
+
+    <exclude-pattern type="relative">^/tests/*</exclude-pattern>
+
+    <file>src</file>
+
+    <rule ref="PSR12"/>
 </ruleset>

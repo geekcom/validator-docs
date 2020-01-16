@@ -13,4 +13,14 @@
             <directory suffix=".php">./tests/</directory>
         </testsuite>
     </testsuites>
+    <filter>
+        <whitelist processUncoveredFilesFromWhitelist="true">
+            <directory>./src/</directory>
+        </whitelist>
+    </filter>
+    <logging>
+        <log type="coverage-html" target="./tests/log/report"
+             lowUpperBound="35" highLowerBound="70"/>
+        <log type="coverage-clover" target="./tests/log/clover.xml"/>
+    </logging>
 </phpunit>
