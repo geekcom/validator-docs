@@ -25,7 +25,7 @@ final class TestValidator extends ValidatorTestCase
     }
 
     /** @test **/
-    public function cpfFormato()
+    public function formatoDoCpf()
     {
         $correct = Validator::make(
             ['certo' => '094.050.986-59'],
@@ -61,7 +61,7 @@ final class TestValidator extends ValidatorTestCase
     }
 
     /** @test **/
-    public function cnpjFormato()
+    public function formatoDoCnpj()
     {
         $correct = Validator::make(
             ['certo' => '53.084.587/0001-20'],
@@ -79,7 +79,7 @@ final class TestValidator extends ValidatorTestCase
     }
 
     /** @test **/
-    public function cpfAndCnpjInTheSameAttribute()
+    public function cpfECnpjNoMesmoAtributo()
     {
         $correct = Validator::make(
             ['certo' => '53.084.587/0001-20'],
@@ -97,7 +97,7 @@ final class TestValidator extends ValidatorTestCase
     }
 
     /** @test **/
-    public function cpfCnpjFormato()
+    public function formatoDoCpfECnpjNoMesmoAtributo()
     {
         $correct = Validator::make(
             ['certo' => '094.050.986-59'],
@@ -176,7 +176,7 @@ final class TestValidator extends ValidatorTestCase
     }
 
     /** @test **/
-    public function nisFormato()
+    public function formatoDoNis()
     {
         $correct = Validator::make(
             ['certo' => '201.73374.34-9'],
@@ -243,7 +243,7 @@ final class TestValidator extends ValidatorTestCase
     }
 
     /** @test **/
-    public function certidaoFormato()
+    public function formatoDacertidao()
     {
         $correct = Validator::make(
             ['certo' => '434546.02.55.2019.1.71037.134.6484858-10'],
