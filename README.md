@@ -1,5 +1,5 @@
 # LaraValidator Docs - Brasil
-_Validação de documentos do Brasil usando **Laravel 6**_
+_Validação de documentos do Brasil usando **Laravel 6/7**_
 
 [![Build Status](https://travis-ci.org/geekcom/validator-docs.svg?branch=master)](https://travis-ci.org/geekcom/validator-docs)
 [![Coverage Status](https://coveralls.io/repos/github/geekcom/validator-docs/badge.svg?branch=master)](https://coveralls.io/github/geekcom/validator-docs?branch=master)
