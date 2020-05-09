@@ -198,7 +198,7 @@ Fique a vontade para contribuir fazendo um fork.
 
 Caso tenha alguma dúvida ou encontre algum bug, abra uma [issue](https://github.com/geekcom/validator-docs/issues) ou pesquise por issues antigas.
 
-## Contributors ✨
+## Contribuidores ✨
 
 Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/docs/en/emoji-key)):
 
