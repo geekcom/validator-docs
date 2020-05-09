@@ -8,7 +8,7 @@ _Validação de documentos do Brasil usando **Laravel 6/7**_
 [![Total Downloads](https://poser.pugx.org/geekcom/validator-docs/downloads)](https://packagist.org/packages/geekcom/validator-docs)
 [![License](https://poser.pugx.org/geekcom/validator-docs/license)](https://packagist.org/packages/geekcom/validator-docs)
 <!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
-[![All Contributors](https://img.shields.io/badge/all_contributors-5-orange.svg?style=flat-square)](#contributors-)
+[![All Contributors](https://img.shields.io/badge/all_contributors-6-orange.svg?style=flat-square)](#contributors-)
 <!-- ALL-CONTRIBUTORS-BADGE:END -->
 
 > Para a versão compatível com Laravel 5 consulte o branch https://github.com/geekcom/validator-docs/tree/5.x.x
@@ -212,6 +212,7 @@ Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/d
     <td align="center"><a href="https://github.com/lordantonelli"><img src="https://avatars2.githubusercontent.com/u/7587764?v=4" width="100px;" alt=""/><br /><sub><b>Humberto Lidio Antonelli</b></sub></a><br /><a href="https://github.com/geekcom/validator-docs/commits?author=lordantonelli" title="Code">💻</a></td>
     <td align="center"><a href="https://github.com/MrEko"><img src="https://avatars1.githubusercontent.com/u/3877358?v=4" width="100px;" alt=""/><br /><sub><b>Evandro Kondrat</b></sub></a><br /><a href="https://github.com/geekcom/validator-docs/commits?author=MrEko" title="Code">💻</a></td>
     <td align="center"><a href="https://github.com/victorhsanjos"><img src="https://avatars0.githubusercontent.com/u/12089532?v=4" width="100px;" alt=""/><br /><sub><b>Victor Anjos</b></sub></a><br /><a href="https://github.com/geekcom/validator-docs/commits?author=victorhsanjos" title="Code">💻</a></td>
+    <td align="center"><a href="http://www.facebook.com/yvescabral"><img src="https://avatars3.githubusercontent.com/u/3816749?v=4" width="100px;" alt=""/><br /><sub><b>Yves Cabral</b></sub></a><br /><a href="https://github.com/geekcom/validator-docs/commits?author=yvescabral" title="Code">💻</a></td>
   </tr>
 </table>
 
