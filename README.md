@@ -1,11 +1,15 @@
 # LaraValidator Docs - Brasil
-_Validação de documentos do Brasil usando **Laravel 6**_
+
+_Validação de documentos do Brasil usando **Laravel 6/7**_
 
 [![Build Status](https://travis-ci.org/geekcom/validator-docs.svg?branch=master)](https://travis-ci.org/geekcom/validator-docs)
 [![Coverage Status](https://coveralls.io/repos/github/geekcom/validator-docs/badge.svg?branch=master)](https://coveralls.io/github/geekcom/validator-docs?branch=master)
 [![PHPStan](https://img.shields.io/badge/PHPStan-enabled-brightgreen.svg?style=flat)](https://github.com/phpstan/phpstan)
 [![Total Downloads](https://poser.pugx.org/geekcom/validator-docs/downloads)](https://packagist.org/packages/geekcom/validator-docs)
 [![License](https://poser.pugx.org/geekcom/validator-docs/license)](https://packagist.org/packages/geekcom/validator-docs)
+<!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
+[![All Contributors](https://img.shields.io/badge/all_contributors-7-orange.svg?style=flat-square)](#contributors-)
+<!-- ALL-CONTRIBUTORS-BADGE:END -->
 
 > Para a versão compatível com Laravel 5 consulte o branch https://github.com/geekcom/validator-docs/tree/5.x.x
 
@@ -193,3 +197,28 @@ public function store(Request $request)
 Fique a vontade para contribuir fazendo um fork.
 
 Caso tenha alguma dúvida ou encontre algum bug, abra uma [issue](https://github.com/geekcom/validator-docs/issues) ou pesquise por issues antigas.
+
+## Contributors ✨
+
+Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/docs/en/emoji-key)):
+
+<!-- ALL-CONTRIBUTORS-LIST:START - Do not remove or modify this section -->
+<!-- prettier-ignore-start -->
+<!-- markdownlint-disable -->
+<table>
+  <tr>
+    <td align="center"><a href="https://twitter.com/geekcom2"><img src="https://avatars2.githubusercontent.com/u/3955933?v=4" width="100px;" alt=""/><br /><sub><b>Daniel Rodrigues</b></sub></a><br /><a href="#infra-geekcom" title="Infrastructure (Hosting, Build-Tools, etc)">🚇</a> <a href="#maintenance-geekcom" title="Maintenance">🚧</a> <a href="https://github.com/geekcom/validator-docs/commits?author=geekcom" title="Code">💻</a></td>
+    <td align="center"><a href="https://github.com/andrergcosta"><img src="https://avatars3.githubusercontent.com/u/5838239?v=4" width="100px;" alt=""/><br /><sub><b>André Rodrigues Gomes Costa</b></sub></a><br /><a href="https://github.com/geekcom/validator-docs/commits?author=andrergcosta" title="Code">💻</a></td>
+    <td align="center"><a href="https://github.com/lordantonelli"><img src="https://avatars2.githubusercontent.com/u/7587764?v=4" width="100px;" alt=""/><br /><sub><b>Humberto Lidio Antonelli</b></sub></a><br /><a href="https://github.com/geekcom/validator-docs/commits?author=lordantonelli" title="Code">💻</a></td>
+    <td align="center"><a href="https://github.com/MrEko"><img src="https://avatars1.githubusercontent.com/u/3877358?v=4" width="100px;" alt=""/><br /><sub><b>Evandro Kondrat</b></sub></a><br /><a href="https://github.com/geekcom/validator-docs/commits?author=MrEko" title="Code">💻</a></td>
+    <td align="center"><a href="https://github.com/victorhsanjos"><img src="https://avatars0.githubusercontent.com/u/12089532?v=4" width="100px;" alt=""/><br /><sub><b>Victor Anjos</b></sub></a><br /><a href="https://github.com/geekcom/validator-docs/commits?author=victorhsanjos" title="Code">💻</a></td>
+    <td align="center"><a href="http://www.facebook.com/yvescabral"><img src="https://avatars3.githubusercontent.com/u/3816749?v=4" width="100px;" alt=""/><br /><sub><b>Yves Cabral</b></sub></a><br /><a href="https://github.com/geekcom/validator-docs/commits?author=yvescabral" title="Code">💻</a></td>
+    <td align="center"><a href="https://github.com/setefocos"><img src="https://avatars3.githubusercontent.com/u/26557942?v=4" width="100px;" alt=""/><br /><sub><b>setefocos</b></sub></a><br /><a href="https://github.com/geekcom/validator-docs/commits?author=setefocos" title="Code">💻</a></td>
+  </tr>
+</table>
+
+<!-- markdownlint-enable -->
+<!-- prettier-ignore-end -->
+<!-- ALL-CONTRIBUTORS-LIST:END -->
+
+This project follows the [all-contributors](https://github.com/all-contributors/all-contributors) specification. Contributions of any kind welcome!

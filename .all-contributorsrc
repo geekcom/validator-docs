@@ -1,0 +1,80 @@
+{
+  "files": [
+    "README.md"
+  ],
+  "imageSize": 100,
+  "commit": false,
+  "contributors": [
+    {
+      "login": "geekcom",
+      "name": "Daniel Rodrigues",
+      "avatar_url": "https://avatars2.githubusercontent.com/u/3955933?v=4",
+      "profile": "https://twitter.com/geekcom2",
+      "contributions": [
+        "infra",
+        "maintenance",
+        "code"
+      ]
+    },
+    {
+      "login": "andrergcosta",
+      "name": "André Rodrigues Gomes Costa",
+      "avatar_url": "https://avatars3.githubusercontent.com/u/5838239?v=4",
+      "profile": "https://github.com/andrergcosta",
+      "contributions": [
+        "code"
+      ]
+    },
+    {
+      "login": "lordantonelli",
+      "name": "Humberto Lidio Antonelli",
+      "avatar_url": "https://avatars2.githubusercontent.com/u/7587764?v=4",
+      "profile": "https://github.com/lordantonelli",
+      "contributions": [
+        "code"
+      ]
+    },
+    {
+      "login": "MrEko",
+      "name": "Evandro Kondrat",
+      "avatar_url": "https://avatars1.githubusercontent.com/u/3877358?v=4",
+      "profile": "https://github.com/MrEko",
+      "contributions": [
+        "code"
+      ]
+    },
+    {
+      "login": "victorhsanjos",
+      "name": "Victor Anjos",
+      "avatar_url": "https://avatars0.githubusercontent.com/u/12089532?v=4",
+      "profile": "https://github.com/victorhsanjos",
+      "contributions": [
+        "code"
+      ]
+    },
+    {
+      "login": "yvescabral",
+      "name": "Yves Cabral",
+      "avatar_url": "https://avatars3.githubusercontent.com/u/3816749?v=4",
+      "profile": "http://www.facebook.com/yvescabral",
+      "contributions": [
+        "code"
+      ]
+    },
+    {
+      "login": "setefocos",
+      "name": "setefocos",
+      "avatar_url": "https://avatars3.githubusercontent.com/u/26557942?v=4",
+      "profile": "https://github.com/setefocos",
+      "contributions": [
+        "code"
+      ]
+    }
+  ],
+  "contributorsPerLine": 7,
+  "projectName": "validator-docs",
+  "projectOwner": "geekcom",
+  "repoType": "github",
+  "repoHost": "https://github.com",
+  "skipCi": true
+}
