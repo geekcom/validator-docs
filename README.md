@@ -8,7 +8,7 @@ _Validação de documentos do Brasil usando **Laravel 6/7**_
 [![Total Downloads](https://poser.pugx.org/geekcom/validator-docs/downloads)](https://packagist.org/packages/geekcom/validator-docs)
 [![License](https://poser.pugx.org/geekcom/validator-docs/license)](https://packagist.org/packages/geekcom/validator-docs)
 <!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
-[![All Contributors](https://img.shields.io/badge/all_contributors-2-orange.svg?style=flat-square)](#contributors-)
+[![All Contributors](https://img.shields.io/badge/all_contributors-3-orange.svg?style=flat-square)](#contributors-)
 <!-- ALL-CONTRIBUTORS-BADGE:END -->
 
 > Para a versão compatível com Laravel 5 consulte o branch https://github.com/geekcom/validator-docs/tree/5.x.x
@@ -209,6 +209,7 @@ Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/d
   <tr>
     <td align="center"><a href="https://twitter.com/geekcom2"><img src="https://avatars2.githubusercontent.com/u/3955933?v=4" width="100px;" alt=""/><br /><sub><b>Daniel Rodrigues</b></sub></a><br /><a href="#infra-geekcom" title="Infrastructure (Hosting, Build-Tools, etc)">🚇</a> <a href="#maintenance-geekcom" title="Maintenance">🚧</a> <a href="https://github.com/geekcom/validator-docs/commits?author=geekcom" title="Code">💻</a></td>
     <td align="center"><a href="https://github.com/andrergcosta"><img src="https://avatars3.githubusercontent.com/u/5838239?v=4" width="100px;" alt=""/><br /><sub><b>André Rodrigues Gomes Costa</b></sub></a><br /><a href="https://github.com/geekcom/validator-docs/commits?author=andrergcosta" title="Code">💻</a></td>
+    <td align="center"><a href="https://github.com/lordantonelli"><img src="https://avatars2.githubusercontent.com/u/7587764?v=4" width="100px;" alt=""/><br /><sub><b>Humberto Lidio Antonelli</b></sub></a><br /><a href="https://github.com/geekcom/validator-docs/commits?author=lordantonelli" title="Code">💻</a></td>
   </tr>
 </table>
 
