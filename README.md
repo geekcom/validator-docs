@@ -1,7 +1,5 @@
 # LaraValidator Docs - Brasil
-<!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
-[![All Contributors](https://img.shields.io/badge/all_contributors-1-orange.svg?style=flat-square)](#contributors-)
-<!-- ALL-CONTRIBUTORS-BADGE:END -->
+
 _Validação de documentos do Brasil usando **Laravel 6/7**_
 
 [![Build Status](https://travis-ci.org/geekcom/validator-docs.svg?branch=master)](https://travis-ci.org/geekcom/validator-docs)
@@ -9,6 +7,9 @@ _Validação de documentos do Brasil usando **Laravel 6/7**_
 [![PHPStan](https://img.shields.io/badge/PHPStan-enabled-brightgreen.svg?style=flat)](https://github.com/phpstan/phpstan)
 [![Total Downloads](https://poser.pugx.org/geekcom/validator-docs/downloads)](https://packagist.org/packages/geekcom/validator-docs)
 [![License](https://poser.pugx.org/geekcom/validator-docs/license)](https://packagist.org/packages/geekcom/validator-docs)
+<!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
+[![All Contributors](https://img.shields.io/badge/all_contributors-1-orange.svg?style=flat-square)](#contributors-)
+<!-- ALL-CONTRIBUTORS-BADGE:END -->
 
 > Para a versão compatível com Laravel 5 consulte o branch https://github.com/geekcom/validator-docs/tree/5.x.x
 
