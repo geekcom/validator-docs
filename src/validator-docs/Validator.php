@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace geekcom\ValidatorDocs;
 
+use geekcom\ValidatorDocs\Rules\Renavam;
 use Illuminate\Validation\Validator as BaseValidator;
 use geekcom\ValidatorDocs\Rules\TituloEleitoral;
 use geekcom\ValidatorDocs\Rules\Cns;
@@ -102,5 +103,12 @@ class Validator extends BaseValidator
         $certidao = new Certidao();
 
         return $certidao->validateCertidao($attribute, $value);
+    }
+
+    protected function validateRenavam($attribute, $value): bool
+    {
+        $renavam = new Renavam();
+
+        return $renavam->validateRenavam($attribute, $value);
     }
 }
