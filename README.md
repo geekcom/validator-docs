@@ -184,6 +184,7 @@ public function store(Request $request)
         'titulo_eleitor' => 'required|titulo_eleitor',
         'nis' => 'required|nis',
         'cns' => 'required|cns',
+        'renavam' => 'required|renavam',
     ]);
 
     dd($data);
