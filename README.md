@@ -107,6 +107,14 @@ $this->validate($request, [
 ]);
 ```
 
+* **renavam** - Verifica se o RENAVAM é válido
+
+```php
+$this->validate($request, [
+    'renavam' => 'required|renavam',
+]);
+```
+
 * **formato_cnpj** - Verifica se o formato de um CNPJ é válida. ( 99.999.999/9999-99 )
 
 ```php
@@ -193,7 +201,7 @@ public function store(Request $request)
 * **NIS** - https://www.4devs.com.br/gerador_de_pis_pasep
 * **CNS** - https://geradornv.com.br/gerador-cns/
 * **CERTIDÃO** - https://www.treinaweb.com.br/ferramentas-para-desenvolvedores/gerador/certidao
-
+* **RENAVAM** - https://www.4devs.com.br/gerador_de_renavam
 Fique a vontade para contribuir fazendo um fork.
 
 Caso tenha alguma dúvida ou encontre algum bug, abra uma [issue](https://github.com/geekcom/validator-docs/issues) ou pesquise por issues antigas.
