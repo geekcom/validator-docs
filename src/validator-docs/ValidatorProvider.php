@@ -39,6 +39,7 @@ class ValidatorProvider extends ServiceProvider
             'cpf_cnpj' => 'CPF ou CNPJ inválido',
             'nis' => 'PIS/PASEP/NIT/NIS inválido',
             'cns' => 'Cartão Nacional de Saúde inválido',
+            'inscricao_estadual' => 'Inscrição Estadual ou UF inválidas',
             'certidao' => 'Número da Certidão inválido',
             'formato_cnpj' => 'Formato inválido para CNPJ',
             'formato_cpf' => 'Formato inválido para CPF',
