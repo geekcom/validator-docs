@@ -13,7 +13,7 @@ _Validação de documentos do Brasil usando **Laravel 6/7/8**_
 
 > Para a versão compatível com Laravel 5 consulte o branch https://github.com/geekcom/validator-docs/tree/5.x.x
 
-Biblioteca Laravel para validação de CPF, CNPJ, CPF/CNPJ (quando salvos no mesmo atributo), CNH, PIS/PASEP/NIT/NIS, Título de Eleitor, Cartão Nacional de Saúde(CNS) e Certidões(nascimento/casamento/óbito).
+Biblioteca Laravel para validação de CPF, CNPJ, CPF/CNPJ (quando salvos no mesmo atributo), CNH, PIS/PASEP/NIT/NIS, Inscrição Estadual, Título de Eleitor, Cartão Nacional de Saúde(CNS) e Certidões(nascimento/casamento/óbito).
 
 ## Instalação
 
@@ -80,6 +80,14 @@ $this->validate($request, [
 ```php
 $this->validate($request, [
     'cpf_cnpj' => 'required|cpf_cnpj',
+]);
+```
+
+* **inscricao_estadual** - Verifica se uma Inscrição Estadual é valida para uma unidade federarativa (UF).
+
+```php
+$this->validate($request, [
+    'inscricao_estadual' => 'required|inscricao_estadual:BA',
 ]);
 ```
 
@@ -193,6 +201,7 @@ public function store(Request $request)
 * **NIS** - https://www.4devs.com.br/gerador_de_pis_pasep
 * **CNS** - https://geradornv.com.br/gerador-cns/
 * **CERTIDÃO** - https://www.treinaweb.com.br/ferramentas-para-desenvolvedores/gerador/certidao
+* **INSCRIÇÃO ESTADUAL** - https://www.4devs.com.br/gerador_de_inscricao_estadual
 
 Fique a vontade para contribuir fazendo um fork.
 
