@@ -291,4 +291,21 @@ final class TestValidator extends ValidatorTestCase
 
         $this->assertTrue($correct->passes());
     }
+
+    public function placa()
+    {
+        $correct = Validator::make(
+            ['certo' => 'P15186'],
+            ['certo' => 'placa']
+        );
+
+        $incorrect = Validator::make(
+            ['errado' => 'X1234'],
+            ['errado' => 'placa']
+        );
+
+        $this->assertTrue($correct->passes());
+
+        $this->assertTrue($incorrect->fails());
+    }
 }
