@@ -11,7 +11,7 @@ class Renavam extends Sanitization
         $renavamArray = str_split($renavam);
         $digitCount = 0;
 
-        for ($i=5; $i >= 2; $i--) {
+        for ($i = 5; $i >= 2; $i--) {
             $sum += $renavamArray[$digitCount] * $i;
             $digitCount++;
         }
