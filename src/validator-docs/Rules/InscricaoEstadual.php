@@ -1,4 +1,5 @@
 <?php
+
 declare(strict_types=1);
 
 namespace geekcom\ValidatorDocs\Rules;
@@ -9,7 +10,7 @@ final class InscricaoEstadual extends Sanitization
 {
     public function validateInscricaoEstadual($attribute, $value, $parameters)
     {
-        if(empty($parameters[0]) || !is_string($parameters[0])) {
+        if (empty($parameters[0]) || !is_string($parameters[0])) {
             return false;
         }
         $siglaUf = $this->sanitizeSiglaUf($parameters[0]);
