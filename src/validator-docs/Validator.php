@@ -14,6 +14,7 @@ use geekcom\ValidatorDocs\Rules\Cpf;
 use geekcom\ValidatorDocs\Rules\Cnpj;
 use geekcom\ValidatorDocs\Rules\Cnh;
 use geekcom\ValidatorDocs\Rules\Certidao;
+use geekcom\ValidatorDocs\Rules\InscricaoEstadual;
 
 use function preg_match;
 
@@ -106,6 +107,13 @@ class Validator extends BaseValidator
         return $certidao->validateCertidao($attribute, $value);
     }
 
+    protected function validateInscricaoEstadual($attribute, $value, $parameters): bool
+    {
+        $inscricaoEstadual = new InscricaoEstadual();
+
+        return $inscricaoEstadual->validateInscricaoEstadual($attribute, $value, $parameters);
+    }
+  
     protected function validateRenavam($attribute, $value): bool
     {
         $renavam = new Renavam();
