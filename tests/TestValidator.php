@@ -307,65 +307,65 @@ final class TestValidator extends ValidatorTestCase
         }
 
         return $inscricoesEstaduaisValidas + [
-            // válidas
-            'válida sem formatação' => [
-                'data' => '82679341',
-                'rules' => 'inscricao_estadual:BA',
-                'assert' => 'passes'
-            ],
-            'válida com estado (UF) em letras minúsculas' => [
-                'data' => '82679341',
-                'rules' => 'inscricao_estadual:ba',
-                'assert' => 'passes'
-            ],
-            'válida com formatação' => [
-                'data' => '826793-41',
-                'rules' => 'inscricao_estadual:BA',
-                'assert' => 'passes'
-            ],
-            'válida com formatação qualquer não-numérica' => [
-                'data' => '8 2__6-7*9.3/41',
-                'rules' => 'inscricao_estadual:BA',
-                'assert' => 'passes'
-            ],
+                // válidas
+                'válida sem formatação' => [
+                    'data' => '82679341',
+                    'rules' => 'inscricao_estadual:BA',
+                    'assert' => 'passes'
+                ],
+                'válida com estado (UF) em letras minúsculas' => [
+                    'data' => '82679341',
+                    'rules' => 'inscricao_estadual:ba',
+                    'assert' => 'passes'
+                ],
+                'válida com formatação' => [
+                    'data' => '826793-41',
+                    'rules' => 'inscricao_estadual:BA',
+                    'assert' => 'passes'
+                ],
+                'válida com formatação qualquer não-numérica' => [
+                    'data' => '8 2__6-7*9.3/41',
+                    'rules' => 'inscricao_estadual:BA',
+                    'assert' => 'passes'
+                ],
 
-            // inválidas
-            'inválida cálculo errado' => [
-                'data' => '82679342', // último digito deveria ser 1
-                'rules' => 'inscricao_estadual:BA',
-                'assert' => 'fails'
-            ],
-            'inválida se estado (UF) errado' => [
-                'data' => '82679341',
-                'rules' => 'inscricao_estadual:SP', // deveria ser BA
-                'assert' => 'fails'
-            ],
-            'inválida se estado (UF) inexistente' => [
-                'data' => '82679341',
-                'rules' => 'inscricao_estadual:ZA',
-                'assert' => 'fails'
-            ],
-            'inválida se estado (UF) invalido (maior)' => [
-                'data' => '82679341',
-                'rules' => 'inscricao_estadual:askdjahsd',
-                'assert' => 'fails'
-            ],
-            'inválida se estado (UF) invalido (menor)' => [
-                'data' => '82679341',
-                'rules' => 'inscricao_estadual:y',
-                'assert' => 'fails'
-            ],
-            'inválida se estado (UF) invalido (numerico)' => [
-                'data' => '82679341',
-                'rules' => 'inscricao_estadual:12',
-                'assert' => 'fails'
-            ],
-            'inválida se estado (UF) não informado' => [
-                'data' => '82679341',
-                'rules' => 'inscricao_estadual',
-                'assert' => 'fails'
-            ],
-        ];
+                // inválidas
+                'inválida cálculo errado' => [
+                    'data' => '82679342', // último digito deveria ser 1
+                    'rules' => 'inscricao_estadual:BA',
+                    'assert' => 'fails'
+                ],
+                'inválida se estado (UF) errado' => [
+                    'data' => '82679341',
+                    'rules' => 'inscricao_estadual:SP', // deveria ser BA
+                    'assert' => 'fails'
+                ],
+                'inválida se estado (UF) inexistente' => [
+                    'data' => '82679341',
+                    'rules' => 'inscricao_estadual:ZA',
+                    'assert' => 'fails'
+                ],
+                'inválida se estado (UF) invalido (maior)' => [
+                    'data' => '82679341',
+                    'rules' => 'inscricao_estadual:askdjahsd',
+                    'assert' => 'fails'
+                ],
+                'inválida se estado (UF) invalido (menor)' => [
+                    'data' => '82679341',
+                    'rules' => 'inscricao_estadual:y',
+                    'assert' => 'fails'
+                ],
+                'inválida se estado (UF) invalido (numerico)' => [
+                    'data' => '82679341',
+                    'rules' => 'inscricao_estadual:12',
+                    'assert' => 'fails'
+                ],
+                'inválida se estado (UF) não informado' => [
+                    'data' => '82679341',
+                    'rules' => 'inscricao_estadual',
+                    'assert' => 'fails'
+                ],
+            ];
     }
 
     /**
@@ -408,6 +408,7 @@ final class TestValidator extends ValidatorTestCase
         $this->assertTrue($correct->passes());
     }
 
+    /** @test **/
     public function placa()
     {
         $correct = Validator::make(
