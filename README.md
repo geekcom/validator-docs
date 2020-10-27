@@ -18,7 +18,7 @@ No arquivo `composer.json`, adicione validator-docs como dependência do seu pro
 
 ```
 "require": {
-    "geekcom/validator-docs" : "^3.3"
+    "geekcom/validator-docs" : "^3.5"
  },
 ```
 
