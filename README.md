@@ -115,6 +115,22 @@ $this->validate($request, [
 ]);
 ```
 
+* **renavam** - Verifica se o RENAVAM é válido
+
+```php
+$this->validate($request, [
+    'renavam' => 'required|renavam',
+]);
+```
+
+* **placa** - Verifica se a PLACA é válida
+
+```php
+$this->validate($request, [
+    'placa' => 'required|placa',
+]);
+```
+
 * **formato_cnpj** - Verifica se o formato de um CNPJ é válida. ( 99.999.999/9999-99 )
 
 ```php
@@ -184,6 +200,8 @@ public function store(Request $request)
         'titulo_eleitor' => 'required|titulo_eleitor',
         'nis' => 'required|nis',
         'cns' => 'required|cns',
+        'renavam' => 'required|renavam',
+        'placa' => 'required|placa',
     ]);
 
     dd($data);
@@ -202,6 +220,8 @@ public function store(Request $request)
 * **CNS** - https://geradornv.com.br/gerador-cns/
 * **CERTIDÃO** - https://www.treinaweb.com.br/ferramentas-para-desenvolvedores/gerador/certidao
 * **INSCRIÇÃO ESTADUAL** - https://www.4devs.com.br/gerador_de_inscricao_estadual
+* **RENAVAM** - https://www.4devs.com.br/gerador_de_renavam
+* **PLACA** - https://www.4devs.com.br/gerador_de_placa_automoveis
 
 Fique a vontade para contribuir fazendo um fork.
 

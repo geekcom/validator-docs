@@ -36,6 +36,7 @@ class ValidatorProvider extends ServiceProvider
             'titulo_eleitor' => 'Título de Eleitor inválido',
             'cnpj' => 'CNPJ inválido',
             'cpf' => 'CPF inválido',
+            'renavam' => 'Renavam inválido',
             'cpf_cnpj' => 'CPF ou CNPJ inválido',
             'nis' => 'PIS/PASEP/NIT/NIS inválido',
             'cns' => 'Cartão Nacional de Saúde inválido',

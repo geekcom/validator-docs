@@ -383,4 +383,45 @@ final class TestValidator extends ValidatorTestCase
         );
         $this->assertTrue($correct->{$assert}());
     }
+
+    /** @test**/
+    public function formatoRenavam()
+    {
+        $correct = Validator::make(
+            ['certo' => '197073212'],
+            ['certo' => 'renavam']
+        );
+
+        $incorrect = Validator::make(
+            ['errado' => '1234555582'],
+            ['errado' => 'renavam']
+        );
+
+        $this->assertTrue($correct->passes());
+        $this->assertTrue($incorrect->fails());
+
+        $correct = Validator::make(
+            ['certo' => '1970.73212'],
+            ['certo' => 'renavam']
+        );
+
+        $this->assertTrue($correct->passes());
+    }
+
+    public function placa()
+    {
+        $correct = Validator::make(
+            ['certo' => 'P15186'],
+            ['certo' => 'placa']
+        );
+
+        $incorrect = Validator::make(
+            ['errado' => 'X1234'],
+            ['errado' => 'placa']
+        );
+
+        $this->assertTrue($correct->passes());
+
+        $this->assertTrue($incorrect->fails());
+    }
 }
