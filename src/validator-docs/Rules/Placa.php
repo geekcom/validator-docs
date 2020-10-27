@@ -2,6 +2,8 @@
 
 namespace geekcom\ValidatorDocs\Rules;
 
+use function preg_match;
+
 final class Placa extends Sanitization
 {
     public function validatePlaca($attribute, $placa): bool
