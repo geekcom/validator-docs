@@ -8,8 +8,6 @@ final class Placa extends Sanitization
 {
     public function validatePlaca($attribute, $placa): bool
     {
-        $placa = $this->sanitize($placa);
-
         $regexPlaca = '/^[A-Z][0-9]{5}$|' . // Placas dos anos 1915-1941 [ex A12345]
             '^[0-9]{7}$|' . // Placas dos anos 1941-1969 [ex 1234567]
             '^[A-Z]{2}[0-9]{4}$|' . // Placas dos anos 1969-1990 [ex AA1234]
