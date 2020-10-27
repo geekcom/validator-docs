@@ -2,6 +2,8 @@
 
 namespace geekcom\ValidatorDocs\Rules;
 
+use function str_split;
+
 class Renavam extends Sanitization
 {
     public function validateRenavam($attribute, $renavam): bool

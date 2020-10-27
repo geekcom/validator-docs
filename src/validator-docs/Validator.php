@@ -4,8 +4,6 @@ declare(strict_types=1);
 
 namespace geekcom\ValidatorDocs;
 
-use geekcom\ValidatorDocs\Rules\Placa;
-use geekcom\ValidatorDocs\Rules\Renavam;
 use Illuminate\Validation\Validator as BaseValidator;
 use geekcom\ValidatorDocs\Rules\TituloEleitoral;
 use geekcom\ValidatorDocs\Rules\Cns;
@@ -15,6 +13,8 @@ use geekcom\ValidatorDocs\Rules\Cnpj;
 use geekcom\ValidatorDocs\Rules\Cnh;
 use geekcom\ValidatorDocs\Rules\Certidao;
 use geekcom\ValidatorDocs\Rules\InscricaoEstadual;
+use geekcom\ValidatorDocs\Rules\Placa;
+use geekcom\ValidatorDocs\Rules\Renavam;
 
 use function preg_match;
 
@@ -113,7 +113,7 @@ class Validator extends BaseValidator
 
         return $inscricaoEstadual->validateInscricaoEstadual($attribute, $value, $parameters);
     }
-  
+
     protected function validateRenavam($attribute, $value): bool
     {
         $renavam = new Renavam();
