@@ -4,6 +4,8 @@ declare(strict_types=1);
 
 namespace geekcom\ValidatorDocs;
 
+use geekcom\ValidatorDocs\Rules\Placa;
+use geekcom\ValidatorDocs\Rules\Renavam;
 use Illuminate\Validation\Validator as BaseValidator;
 use geekcom\ValidatorDocs\Rules\TituloEleitoral;
 use geekcom\ValidatorDocs\Rules\Cns;
@@ -12,6 +14,7 @@ use geekcom\ValidatorDocs\Rules\Cpf;
 use geekcom\ValidatorDocs\Rules\Cnpj;
 use geekcom\ValidatorDocs\Rules\Cnh;
 use geekcom\ValidatorDocs\Rules\Certidao;
+use geekcom\ValidatorDocs\Rules\InscricaoEstadual;
 
 use function preg_match;
 
@@ -102,5 +105,26 @@ class Validator extends BaseValidator
         $certidao = new Certidao();
 
         return $certidao->validateCertidao($attribute, $value);
+    }
+
+    protected function validateInscricaoEstadual($attribute, $value, $parameters): bool
+    {
+        $inscricaoEstadual = new InscricaoEstadual();
+
+        return $inscricaoEstadual->validateInscricaoEstadual($attribute, $value, $parameters);
+    }
+  
+    protected function validateRenavam($attribute, $value): bool
+    {
+        $renavam = new Renavam();
+
+        return $renavam->validateRenavam($attribute, $value);
+    }
+
+    protected function validatePlaca($attribute, $value): bool
+    {
+        $placa = new Placa();
+
+        return $placa->validatePlaca($attribute, $value);
     }
 }
