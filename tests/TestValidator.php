@@ -425,4 +425,40 @@ final class TestValidator extends ValidatorTestCase
 
         $this->assertTrue($incorrect->fails());
     }
+
+    /**
+     * @test
+     */
+    public function ddd()
+    {
+        $dddExisting = array_merge(
+            range(11, 19),
+            [21, 22, 24, 27, 28],
+            range(31, 35),
+            [37, 38],
+            range(41, 49),
+            [51],
+            range(53, 55),
+            range(61, 69),
+            [71],
+            range(73, 75),
+            [77, 79],
+            range(81, 89),
+            range(91, 99)
+        );
+
+        $correct = Validator::make(
+            ['certo' => $dddExisting[array_rand($dddExisting)]],
+            ['certo' => 'ddd']
+        );
+
+        $incorrect = Validator::make(
+            ['errado' => '10'],
+            ['errado' => 'ddd']
+        );
+
+        $this->assertTrue($correct->passes());
+
+        $this->assertTrue($incorrect->fails());
+    }
 }
