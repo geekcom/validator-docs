@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace geekcom\ValidatorDocs;
 
+use geekcom\ValidatorDocs\Rules\PisPasep;
 use Illuminate\Validation\Validator as BaseValidator;
 use geekcom\ValidatorDocs\Rules\TituloEleitoral;
 use geekcom\ValidatorDocs\Rules\Cns;
@@ -126,5 +127,12 @@ class Validator extends BaseValidator
         $placa = new Placa();
 
         return $placa->validatePlaca($attribute, $value);
+    }
+
+    protected function validatePisPasep($attribute, $value): bool
+    {
+        $pisPasep = new PisPasep();
+
+        return $pisPasep->validatePisPasep($attribute, $value);
     }
 }

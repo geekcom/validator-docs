@@ -128,6 +128,14 @@ $this->validate($request, [
 ]);
 ```
 
+* **pis_pasep** - Verifica se o número do PIS/PASEP é válido
+
+```php
+$this->validate($request, [
+    'pis_pasep' => 'required|pis_pasep',
+]);
+```
+
 * **formato_cnpj** - Verifica se o formato de um CNPJ é válida. ( 99.999.999/9999-99 )
 
 ```php
@@ -199,6 +207,7 @@ public function store(Request $request)
         'cns' => 'required|cns',
         'renavam' => 'required|renavam',
         'placa' => 'required|placa',
+        'pis_pasep' => 'required|pis_pasep',
     ]);
 
     dd($data);
@@ -219,6 +228,7 @@ public function store(Request $request)
 * **INSCRIÇÃO ESTADUAL** - https://www.4devs.com.br/gerador_de_inscricao_estadual
 * **RENAVAM** - https://www.4devs.com.br/gerador_de_renavam
 * **PLACA** - https://www.4devs.com.br/gerador_de_placa_automoveis
+* **PIS/PASEP** - https://www.4devs.com.br/gerador_de_pis_pasep
 
 Fique a vontade para contribuir fazendo um fork.
 

@@ -425,4 +425,22 @@ final class TestValidator extends ValidatorTestCase
 
         $this->assertTrue($incorrect->fails());
     }
+
+    /** @test **/
+    public function pisPasep()
+    {
+        $correct = Validator::make(
+            ['certo' => '696.65604.84-7'],
+            ['certo' => 'pis_pasep']
+        );
+
+        $incorrect = Validator::make(
+            ['errado' => '746.65204.34-6'],
+            ['errado' => 'pis_pasep']
+        );
+
+        $this->assertTrue($correct->passes());
+
+        $this->assertTrue($incorrect->fails());
+    }
 }
