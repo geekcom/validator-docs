@@ -42,6 +42,7 @@ class ValidatorProvider extends ServiceProvider
             'cns' => 'Cartão Nacional de Saúde inválido',
             'inscricao_estadual' => 'Inscrição Estadual ou UF inválidas',
             'certidao' => 'Número da Certidão inválido',
+            'ddd' => 'DDD inválido',
             'formato_cnpj' => 'Formato inválido para CNPJ',
             'formato_cpf' => 'Formato inválido para CPF',
             'formato_cpf_cnpj' => 'Formato inválido para CPF ou CNPJ',
