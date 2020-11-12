@@ -128,6 +128,14 @@ $this->validate($request, [
 ]);
 ```
 
+* **ddd** - Verifica se a DDD é válida
+
+```php
+$this->validate($request, [
+    'ddd' => 'required|ddd',
+]);
+```
+
 * **formato_cnpj** - Verifica se o formato de um CNPJ é válida. ( 99.999.999/9999-99 )
 
 ```php
@@ -199,6 +207,7 @@ public function store(Request $request)
         'cns' => 'required|cns',
         'renavam' => 'required|renavam',
         'placa' => 'required|placa',
+        'ddd' => 'required|ddd',
     ]);
 
     dd($data);
