@@ -12,13 +12,13 @@ final class RenavamTest extends ValidatorTestCase
      *
      * @dataProvider renavamProvider
      */
-    public function renavamValido($renavam, $expected): void
+    public function renavamValido($renavam, $esperado): void
     {
         $instance = new Renavam();
 
         $atual = $instance->validateRenavam('', $renavam);
 
-        $this->assertSame($expected, $atual);
+        $this->assertSame($esperado, $atual);
     }
 
     public function renavamProvider(): array
@@ -26,11 +26,11 @@ final class RenavamTest extends ValidatorTestCase
         return [
             'Input correto' => [
                 'renavam' => 639884962,
-                'expected' => true,
+                'esperado' => true,
             ],
             'Input incorreto' => [
                 'renavam' => 11111111111,
-                'expected' => false
+                'esperado' => false
             ],
         ];
     }

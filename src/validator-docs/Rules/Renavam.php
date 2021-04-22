@@ -8,7 +8,7 @@ class Renavam extends Sanitization
 {
     public function validateRenavam($attribute, $renavam): bool
     {
-        $renavam = $this->sanitize($renavam);
+        $renavam = $this->sanitize((string) $renavam);
         $renavamArray = str_split($renavam);
         $digit = $this->determinarDigito($renavamArray);
 
