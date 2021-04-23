@@ -1,3 +1,28 @@
+# Changelog
+
+A partir da versão 3.5.1 nosso modelo de logs é baseado em [mantenha um changelog](https://keepachangelog.com/pt-BR/1.0.0/) e o
+nosso versionamento continua sendo [versionamento semântico](https://semver.org/lang/pt-BR/).
+
+## [3.5.2](https://github.com/geekcom/validator-docs/compare/3.5.1...3.5.2)
+
+## Commits
+
+- Adicionado: verificação de DDD. [`52bb67a`](https://github.com/geekcom/validator-docs/commit/52bb67a51bf6c36f5aef00fb9429203bfe4d4ad3)
+- Adicionado: mensagem para a verificação de DDD. [`52bb67a`](https://github.com/geekcom/validator-docs/commit/52bb67a51bf6c36f5aef00fb9429203bfe4d4ad3)
+- Modificado: teste no PHP 8, dependências foram atualizadas. [`a0005e1`](https://github.com/geekcom/validator-docs/commit/a0005e168eb2eca0da06d36ae92b8976c4195766)
+- Modificado: fix Sanitization class to deal with null values. [`d57c8e9`](https://github.com/geekcom/validator-docs/commit/d57c8e9076769d2e978d5bd3a8fbd470980b5bbb)
+- Modificado/Adicionado: melhora coverage para Renavam. [`574114d`](https://github.com/geekcom/validator-docs/commit/574114d29ef5d98784972aafe7213fcf6bac4d8e)
+- Consertado: resolve erro com sanitize. [`a6d33e5`](https://github.com/geekcom/validator-docs/commit/a6d33e54a66090ffb485e7385e9c1fc40ca4e9da)
+
+
+## [3.5.1](https://github.com/geekcom/validator-docs/compare/3.5.0...3.5.1)
+
+## Commits
+
+- Modificado: Atualizar versão da lib na doc. [`e61829b`](https://github.com/geekcom/validator-docs/commit/e61829be54353c0335db425962d7c2e9075d727f)
+- Corrigido: validação de Placa não precisa de sanitization. [`d5a0e7b`](https://github.com/geekcom/validator-docs/commit/d5a0e7be832003332395b5e3eac2a58f879ca060)
+
+---
 <!-- changelog-linker -->
 
 <!-- dumped content start -->
