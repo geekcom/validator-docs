@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace geekcom\ValidatorDocs;
 
+use geekcom\ValidatorDocs\Rules\Ddd;
 use Illuminate\Validation\Validator as BaseValidator;
 use geekcom\ValidatorDocs\Rules\TituloEleitoral;
 use geekcom\ValidatorDocs\Rules\Cns;
@@ -57,8 +58,6 @@ class Validator extends BaseValidator
 
     protected function validateCpf($attribute, $value): bool
     {
-        if($value === null) return true;
-
         $cpf = new Cpf();
 
         return $cpf->validateCpf($attribute, $value);
@@ -66,8 +65,6 @@ class Validator extends BaseValidator
 
     protected function validateCnpj($attribute, $value): bool
     {
-        if($value === null) return true;
-
         $cnpj = new Cnpj();
 
         return $cnpj->validateCnpj($attribute, $value);
@@ -75,8 +72,6 @@ class Validator extends BaseValidator
 
     protected function validateCpfCnpj($attribute, $value): bool
     {
-        if($value === null) return true;
-
         $cpf = new Cpf();
         $cnpj = new Cnpj();
 
@@ -85,8 +80,6 @@ class Validator extends BaseValidator
 
     protected function validateCnh($attribute, $value): bool
     {
-        if($value === null) return true;
-
         $cnh = new Cnh();
 
         return $cnh->validateCnh($attribute, $value);
@@ -94,8 +87,6 @@ class Validator extends BaseValidator
 
     protected function validateTituloEleitor($attribute, $value): bool
     {
-        if($value === null) return true;
-
         $tituloEleitoral = new TituloEleitoral();
 
         return $tituloEleitoral->validateTituloEleitor($attribute, $value);
@@ -103,8 +94,6 @@ class Validator extends BaseValidator
 
     protected function validateNis($attribute, $value): bool
     {
-        if($value === null) return true;
-
         $nis = new Nis();
 
         return $nis->validateNis($attribute, $value);
@@ -112,8 +101,6 @@ class Validator extends BaseValidator
 
     protected function validateCns($attribute, $value): bool
     {
-        if($value === null) return true;
-
         $cns = new Cns();
 
         return $cns->validateCns($attribute, $value);
@@ -121,8 +108,6 @@ class Validator extends BaseValidator
 
     protected function validateCertidao($attribute, $value): bool
     {
-        if($value === null) return true;
-
         $certidao = new Certidao();
 
         return $certidao->validateCertidao($attribute, $value);
@@ -130,8 +115,6 @@ class Validator extends BaseValidator
 
     protected function validateInscricaoEstadual($attribute, $value, $parameters): bool
     {
-        if($value === null) return true;
-
         $inscricaoEstadual = new InscricaoEstadual();
 
         return $inscricaoEstadual->validateInscricaoEstadual($attribute, $value, $parameters);
@@ -139,8 +122,6 @@ class Validator extends BaseValidator
 
     protected function validateRenavam($attribute, $value): bool
     {
-        if($value === null) return true;
-
         $renavam = new Renavam();
 
         return $renavam->validateRenavam($attribute, $value);
@@ -148,10 +129,15 @@ class Validator extends BaseValidator
 
     protected function validatePlaca($attribute, $value): bool
     {
-        if($value === null) return true;
-
         $placa = new Placa();
 
         return $placa->validatePlaca($attribute, $value);
+    }
+
+    protected function validateDdd($attribute, $value): bool
+    {
+        $ddd = new Ddd();
+
+        return $ddd->validateDdd($attribute, $value);
     }
 }
