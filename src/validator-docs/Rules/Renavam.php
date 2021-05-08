@@ -8,28 +8,25 @@ class Renavam extends Sanitization
 {
     public function validateRenavam($attribute, $renavam): bool
     {
-        $renavam = $this->sanitize($renavam);
-        $sum = 0;
+        $renavam = $this->sanitize((string) $renavam);
         $renavamArray = str_split($renavam);
-        $digitCount = 0;
+        $digit = $this->determinarDigito($renavamArray);
 
-        for ($i = 5; $i >= 2; $i--) {
-            $sum += $renavamArray[$digitCount] * $i;
-            $digitCount++;
+        return $digit === (int) $renavamArray[4];
+    }
+
+    public function determinarDigito($renavam): int
+    {
+        $resultante = 0;
+        $contador = 0;
+
+        for ($indice = 5; $indice >= 2; $indice--) {
+            $resultante += $renavam[$contador] * $indice;
+            $contador++;
         }
 
-        $valor = $sum % 11;
+        $verificador = $resultante % 11;
 
-        $digit = $valor;
-
-        if ($valor == 11 || $valor == 0 || $valor >= 10) {
-            $digit = 0;
-        }
-
-        if ($digit == $renavamArray[4]) {
-            return true;
-        }
-
-        return false;
+        return $verificador >= 10 ? 0 : $verificador;
     }
 }
