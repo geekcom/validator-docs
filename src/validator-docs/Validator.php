@@ -28,36 +28,61 @@ class Validator extends BaseValidator
 {
     protected function validateFormatoCpf($attribute, $value): bool
     {
-        if($value === null) return true;
+        if($value === null)
+		{
+			return true;
+		}
+		
         return preg_match('/^\d{3}\.\d{3}\.\d{3}-\d{2}$/', $value) > 0;
     }
 
     protected function validateFormatoCnpj($attribute, $value): bool
     {
-        if($value === null) return true;
+        if($value === null)
+		{
+			return true;
+		}
+		
         return preg_match('/^\d{2}\.\d{3}\.\d{3}\/\d{4}-\d{2}$/', $value) > 0;
     }
 
     protected function validateFormatoCpfCnpj($attribute, $value): bool
     {
-        if($value === null) return true;
+        if($value === null)
+		{
+			return true;
+		}
+		
         return $this->validateFormatoCpf($attribute, $value) || $this->validateFormatoCnpj($attribute, $value);
     }
 
     protected function validateFormatoNis($attribute, $value): bool
     {
-        if($value === null) return true;
+        if($value === null)
+		{
+			return true;
+		}
+		
         return preg_match('/^\d{3}\.\d{5}\.\d{2}-\d{1}$/', $value) > 0;
     }
 
     protected function validateFormatoCertidao($attribute, $value): bool
     {
-        if($value === null) return true;
+        if($value === null)
+		{
+			return true;
+		}
+		
         return preg_match('/^\d{6}[. ]\d{2}[. ]\d{2}[. ]\d{4}[. ]\d{1}[. ]\d{5}[. ]\d{3}[. ]\d{7}[- ]\d{2}$/', $value) > 0;
     }
 
     protected function validateCpf($attribute, $value): bool
     {
+        if($value === null)
+		{
+			return true;
+		}
+		
         $cpf = new Cpf();
 
         return $cpf->validateCpf($attribute, $value);
@@ -65,6 +90,11 @@ class Validator extends BaseValidator
 
     protected function validateCnpj($attribute, $value): bool
     {
+        if($value === null)
+		{
+			return true;
+		}
+		
         $cnpj = new Cnpj();
 
         return $cnpj->validateCnpj($attribute, $value);
@@ -72,6 +102,11 @@ class Validator extends BaseValidator
 
     protected function validateCpfCnpj($attribute, $value): bool
     {
+        if($value === null)
+		{
+			return true;
+		}
+		
         $cpf = new Cpf();
         $cnpj = new Cnpj();
 
@@ -80,6 +115,11 @@ class Validator extends BaseValidator
 
     protected function validateCnh($attribute, $value): bool
     {
+        if($value === null)
+		{
+			return true;
+		}
+		
         $cnh = new Cnh();
 
         return $cnh->validateCnh($attribute, $value);
@@ -87,6 +127,11 @@ class Validator extends BaseValidator
 
     protected function validateTituloEleitor($attribute, $value): bool
     {
+        if($value === null)
+		{
+			return true;
+		}
+		
         $tituloEleitoral = new TituloEleitoral();
 
         return $tituloEleitoral->validateTituloEleitor($attribute, $value);
@@ -94,6 +139,11 @@ class Validator extends BaseValidator
 
     protected function validateNis($attribute, $value): bool
     {
+        if($value === null)
+		{
+			return true;
+		}
+		
         $nis = new Nis();
 
         return $nis->validateNis($attribute, $value);
@@ -101,6 +151,11 @@ class Validator extends BaseValidator
 
     protected function validateCns($attribute, $value): bool
     {
+        if($value === null)
+		{
+			return true;
+		}
+		
         $cns = new Cns();
 
         return $cns->validateCns($attribute, $value);
@@ -108,6 +163,11 @@ class Validator extends BaseValidator
 
     protected function validateCertidao($attribute, $value): bool
     {
+        if($value === null)
+		{
+			return true;
+		}
+		
         $certidao = new Certidao();
 
         return $certidao->validateCertidao($attribute, $value);
@@ -115,6 +175,12 @@ class Validator extends BaseValidator
 
     protected function validateInscricaoEstadual($attribute, $value, $parameters): bool
     {
+        if($value === null)
+		{
+			return true;
+		}
+		
+
         $inscricaoEstadual = new InscricaoEstadual();
 
         return $inscricaoEstadual->validateInscricaoEstadual($attribute, $value, $parameters);
@@ -122,6 +188,11 @@ class Validator extends BaseValidator
 
     protected function validateRenavam($attribute, $value): bool
     {
+        if($value === null)
+		{
+			return true;
+		}
+		
         $renavam = new Renavam();
 
         return $renavam->validateRenavam($attribute, $value);
@@ -129,6 +200,11 @@ class Validator extends BaseValidator
 
     protected function validatePlaca($attribute, $value): bool
     {
+        if($value === null)
+		{
+			return true;
+		}
+		
         $placa = new Placa();
 
         return $placa->validatePlaca($attribute, $value);
@@ -136,6 +212,11 @@ class Validator extends BaseValidator
 
     protected function validateDdd($attribute, $value): bool
     {
+        if($value === null)
+		{
+			return true;
+		}
+		
         $ddd = new Ddd();
 
         return $ddd->validateDdd($attribute, $value);

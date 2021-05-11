@@ -461,4 +461,72 @@ final class TestValidator extends ValidatorTestCase
 
         $this->assertTrue($incorrect->fails());
     }
+	
+    /** @test **/
+    public function formatosValorNull()
+    {
+        //CNPJ
+		$correct = Validator::make(
+            ['certo' => null],
+            ['certo' => 'formato-cnpj']
+        );
+
+        $incorrect = Validator::make(
+            ['errado' => '51.084.587/000120'],
+            ['errado' => 'formato-cnpj']
+        );
+
+        $this->assertTrue($correct->passes());
+
+        $this->assertTrue($incorrect->fails());
+		
+        //CPF
+        $correct = Validator::make(
+            ['certo' => null],
+            ['certo' => 'formato-cpf']
+        );
+
+        $incorrect = Validator::make(
+            ['errado' => '094.050.986-591'],
+            ['errado' => 'formato-cpf']
+        );
+
+        $this->assertTrue($correct->passes());
+
+        $this->assertTrue($incorrect->fails());
+		
+        //NIS
+        $correct = Validator::make(
+            ['certo' => null],
+            ['certo' => 'formato-nis']
+        );
+
+        $incorrect = Validator::make(
+            ['errado' => '201.733.7434-9'],
+            ['errado' => 'formato-nis']
+        );
+
+        $this->assertTrue($correct->passes());
+
+        $this->assertTrue($incorrect->fails());
+		
+        //Certidao
+        $correct = Validator::make(
+            ['certo' => null],
+            ['certo' => 'formato-certidao']
+        );
+
+        $incorrect = Validator::make(
+            ['errado' => '201.733.7434-9'],
+            ['errado' => 'formato-certidao']
+        );
+
+        $this->assertTrue($correct->passes());
+
+        $this->assertTrue($incorrect->fails());
+		
+		
+    }
+	
 }
+ 
