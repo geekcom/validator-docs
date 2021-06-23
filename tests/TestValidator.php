@@ -25,24 +25,6 @@ final class TestValidator extends ValidatorTestCase
     }
 
     /** @test **/
-    public function formatoDoCpf()
-    {
-        $correct = Validator::make(
-            ['certo' => '094.050.986-59'],
-            ['certo' => 'formato-cpf']
-        );
-
-        $incorrect = Validator::make(
-            ['errado' => '094.050.986-591'],
-            ['errado' => 'formato-cpf']
-        );
-
-        $this->assertTrue($correct->passes());
-
-        $this->assertTrue($incorrect->fails());
-    }
-
-    /** @test **/
     public function cnpj()
     {
         $correct = Validator::make(
@@ -61,24 +43,6 @@ final class TestValidator extends ValidatorTestCase
     }
 
     /** @test **/
-    public function formatoDoCnpj()
-    {
-        $correct = Validator::make(
-            ['certo' => '53.084.587/0001-20'],
-            ['certo' => 'formato-cnpj']
-        );
-
-        $incorrect = Validator::make(
-            ['errado' => '51.084.587/000120'],
-            ['errado' => 'formato-cnpj']
-        );
-
-        $this->assertTrue($correct->passes());
-
-        $this->assertTrue($incorrect->fails());
-    }
-
-    /** @test **/
     public function cpfECnpjNoMesmoAtributo()
     {
         $correct = Validator::make(
@@ -89,24 +53,6 @@ final class TestValidator extends ValidatorTestCase
         $incorrect = \Validator::make(
             ['errado' => '99800-1926'],
             ['errado' => 'cpf-cnpj']
-        );
-
-        $this->assertTrue($correct->passes());
-
-        $this->assertTrue($incorrect->fails());
-    }
-
-    /** @test **/
-    public function formatoDoCpfECnpjNoMesmoAtributo()
-    {
-        $correct = Validator::make(
-            ['certo' => '094.050.986-59'],
-            ['certo' => 'formato-cpf-cnpj']
-        );
-
-        $incorrect = \Validator::make(
-            ['errado' => '51.084.587/000120'],
-            ['errado' => 'formato-cpf-cnpj']
         );
 
         $this->assertTrue($correct->passes());
@@ -176,24 +122,6 @@ final class TestValidator extends ValidatorTestCase
     }
 
     /** @test **/
-    public function formatoDoNis()
-    {
-        $correct = Validator::make(
-            ['certo' => '201.73374.34-9'],
-            ['certo' => 'formato-nis']
-        );
-
-        $incorrect = Validator::make(
-            ['errado' => '201.733.7434-9'],
-            ['errado' => 'formato-nis']
-        );
-
-        $this->assertTrue($correct->passes());
-
-        $this->assertTrue($incorrect->fails());
-    }
-
-    /** @test **/
     public function cns()
     {
         // Definitiva
@@ -240,30 +168,6 @@ final class TestValidator extends ValidatorTestCase
 
         $this->assertTrue($correct->passes());
         $this->assertTrue($incorrect->fails());
-    }
-
-    /** @test **/
-    public function formatoDacertidao()
-    {
-        $correct = Validator::make(
-            ['certo' => '434546.02.55.2019.1.71037.134.6484858-10'],
-            ['certo' => 'formato-certidao']
-        );
-
-        $incorrect = Validator::make(
-            ['errado' => '201.733.7434-9'],
-            ['errado' => 'formato-certidao']
-        );
-
-        $this->assertTrue($correct->passes());
-        $this->assertTrue($incorrect->fails());
-
-        // com ' ' no lugar de '.'
-        $correct = Validator::make(
-            ['certo' => '434546 02 55 2019 1 71037 134 6484858 10'],
-            ['certo' => 'formato-certidao']
-        );
-        $this->assertTrue($correct->passes());
     }
 
     public function inscricoesEstaduais()

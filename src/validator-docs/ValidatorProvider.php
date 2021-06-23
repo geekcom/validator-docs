@@ -22,11 +22,16 @@ class ValidatorProvider extends ServiceProvider
     {
         $me = $this;
 
-        $this->app['validator']->resolver(function ($translator, $data, $rules, $messages, $attributes) use ($me) {
-            $messages += $me->getMessages();
+        $validatorFormats = new ValidatorFormats();
 
-            return new Validator($translator, $data, $rules, $messages, $attributes);
-        });
+        $this->app['validator']
+            ->resolver(
+                function ($translator, $data, $rules, $messages, $attributes) use ($me, $validatorFormats) {
+                    $messages += $me->getMessages();
+
+                    return new Validator($translator, $validatorFormats, $data, $rules, $messages, $attributes);
+                }
+            );
     }
 
     protected function getMessages()
