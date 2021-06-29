@@ -1,59 +1,46 @@
 <?php
 
-declare(strict_types=1);
-
 namespace geekcom\ValidatorDocs;
 
-use geekcom\ValidatorDocs\Rules\Ddd;
+use geekcom\ValidatorDocs\Rules\{Certidao,
+    Cnh,
+    Cnpj,
+    Cns,
+    Cpf,
+    Ddd,
+    InscricaoEstadual,
+    Nis,
+    Placa,
+    Renavam,
+    TituloEleitoral};
+use Illuminate\Contracts\Translation\Translator;
 use Illuminate\Validation\Validator as BaseValidator;
-use geekcom\ValidatorDocs\Rules\TituloEleitoral;
-use geekcom\ValidatorDocs\Rules\Cns;
-use geekcom\ValidatorDocs\Rules\Nis;
-use geekcom\ValidatorDocs\Rules\Cpf;
-use geekcom\ValidatorDocs\Rules\Cnpj;
-use geekcom\ValidatorDocs\Rules\Cnh;
-use geekcom\ValidatorDocs\Rules\Certidao;
-use geekcom\ValidatorDocs\Rules\InscricaoEstadual;
-use geekcom\ValidatorDocs\Rules\Placa;
-use geekcom\ValidatorDocs\Rules\Renavam;
 
-use function preg_match;
-
-/**
- *
- * @author Daniel Rodrigues Lima
- * @email danielrodrigues-ti@hotmail.com
- */
 class Validator extends BaseValidator
 {
-    protected function validateFormatoCpf($attribute, $value): bool
-    {
-        return preg_match('/^\d{3}\.\d{3}\.\d{3}-\d{2}$/', $value) > 0;
+    public function __construct(
+        Translator $translator,
+        ValidatorFormats $formatValidator,
+        array $data,
+        array $rules,
+        array $messages = [],
+        array $customAttributes = []
+    ) {
+        parent::__construct($translator, $data, $rules, $messages, $customAttributes);
     }
 
-    protected function validateFormatoCnpj($attribute, $value): bool
+    protected function validateFormat($value, $document, $attribute = null)
     {
-        return preg_match('/^\d{2}\.\d{3}\.\d{3}\/\d{4}-\d{2}$/', $value) > 0;
-    }
-
-    protected function validateFormatoCpfCnpj($attribute, $value): bool
-    {
-        return $this->validateFormatoCpf($attribute, $value) || $this->validateFormatoCnpj($attribute, $value);
-    }
-
-    protected function validateFormatoNis($attribute, $value): bool
-    {
-        return preg_match('/^\d{3}\.\d{5}\.\d{2}-\d{1}$/', $value) > 0;
-    }
-
-    protected function validateFormatoCertidao($attribute, $value): bool
-    {
-        return preg_match('/^\d{6}[. ]\d{2}[. ]\d{2}[. ]\d{4}[. ]\d{1}[. ]\d{5}[. ]\d{3}[. ]\d{7}[- ]\d{2}$/', $value) > 0;
+        if (!empty($value)) {
+            return (new ValidatorFormats())->execute($value, $document);
+        }
     }
 
     protected function validateCpf($attribute, $value): bool
     {
         $cpf = new Cpf();
+
+        $this->validateFormat($value, 'cpf');
 
         return $cpf->validateCpf($attribute, $value);
     }
