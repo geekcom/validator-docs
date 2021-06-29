@@ -3,6 +3,14 @@
 A partir da versão 3.5.1 nosso modelo de logs é baseado em [mantenha um changelog](https://keepachangelog.com/pt-BR/1.0.0/) e o
 nosso versionamento continua sendo [versionamento semântico](https://semver.org/lang/pt-BR/).
 
+## [3.5.3](https://github.com/geekcom/validator-docs/compare/3.5.2...3.5.3)
+
+## Commits
+
+- Modificado: link para geração de documento [`94064a9`](https://github.com/geekcom/validator-docs/commit/94064a98379dca1e781bd358e4c10d7a1cff0020)
+- Consertado: retirado informação duplicada para Inscrição Estadual do README [`94064a9`](https://github.com/geekcom/validator-docs/commit/94064a98379dca1e781bd358e4c10d7a1cff0020)
+- Consertado: valida formato do documento apenas se valor é informado. [`424fc22c`](https://github.com/geekcom/validator-docs/commit/424fc22c9865a77e6c27a9a26e4ed8dd9baf20eb)
+
 ## [3.5.2](https://github.com/geekcom/validator-docs/compare/3.5.1...3.5.2)
 
 ## Commits
