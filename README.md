@@ -222,15 +222,14 @@ public function store(Request $request)
 ## Geradores de documentos para testes
 * **CNH** - http://4devs.com.br/gerador_de_cnh
 * **TÍTULO ELEITORAL** - http://4devs.com.br/gerador_de_titulo_de_eleitor
-* **CNPJ** - http://www.geradorcnpj.com/
-* **CPF** - http://geradordecpf.org
+* **CNPJ** - https://geradornv.com.br/gerador-cnpj/
+* **CPF** - https://geradornv.com.br/gerador-cpf/
 * **NIS** - https://www.4devs.com.br/gerador_de_pis_pasep
 * **CNS** - https://geradornv.com.br/gerador-cns/
 * **CERTIDÃO** - https://www.treinaweb.com.br/ferramentas-para-desenvolvedores/gerador/certidao
 * **INSCRIÇÃO ESTADUAL** - https://www.4devs.com.br/gerador_de_inscricao_estadual
 * **RENAVAM** - https://www.4devs.com.br/gerador_de_renavam
 * **PLACA** - https://www.4devs.com.br/gerador_de_placa_automoveis
-* **INSCRIÇÃO ESTADUAL** - https://www.4devs.com.br/gerador_de_inscricao_estadual
 
 Fique a vontade para contribuir de qualquer forma.
 
