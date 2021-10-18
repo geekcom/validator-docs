@@ -1,7 +1,7 @@
 # Validator Docs - Brasil
 _Biblioteca PHP para validação de documentos do Brasil usando **Laravel**_
 
-[![Build Status](https://travis-ci.com/geekcom/validator-docs.svg?branch=master)](https://travis-ci.com/geekcom/validator-docs)
+[![Build Status](https://app.travis-ci.com/geekcom/validator-docs.svg?branch=master)](https://travis-ci.com/geekcom/validator-docs)
 [![Coverage Status](https://coveralls.io/repos/github/geekcom/validator-docs/badge.svg?branch=master)](https://coveralls.io/github/geekcom/validator-docs?branch=master)
 [![PHPStan](https://img.shields.io/badge/PHPStan-enabled-brightgreen.svg?style=flat)](https://github.com/phpstan/phpstan)
 [![Total Downloads](https://poser.pugx.org/geekcom/validator-docs/downloads)](https://packagist.org/packages/geekcom/validator-docs)
