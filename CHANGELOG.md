@@ -3,6 +3,12 @@
 A partir da versão 3.5.1 nosso modelo de logs é baseado em [mantenha um changelog](https://keepachangelog.com/pt-BR/1.0.0/) e o
 nosso versionamento continua sendo [versionamento semântico](https://semver.org/lang/pt-BR/).
 
+## [3.5.4](https://github.com/geekcom/validator-docs/compare/3.5.3...3.5.4)
+
+## Commits
+
+- Consertado: link para o travis-ci no README.md [`e4c9dcd`](https://github.com/geekcom/validator-docs/commit/e4c9dcd124795ce9dd6a36d1114db9c2d7b999db)
+
 ## [3.5.3](https://github.com/geekcom/validator-docs/compare/3.5.2...3.5.3)
 
 ## Commits
@@ -21,7 +27,6 @@ nosso versionamento continua sendo [versionamento semântico](https://semver.org
 - Modificado: fix Sanitization class to deal with null values. [`d57c8e9`](https://github.com/geekcom/validator-docs/commit/d57c8e9076769d2e978d5bd3a8fbd470980b5bbb)
 - Modificado/Adicionado: melhora coverage para Renavam. [`574114d`](https://github.com/geekcom/validator-docs/commit/574114d29ef5d98784972aafe7213fcf6bac4d8e)
 - Consertado: resolve erro com sanitize. [`a6d33e5`](https://github.com/geekcom/validator-docs/commit/a6d33e54a66090ffb485e7385e9c1fc40ca4e9da)
-
 
 ## [3.5.1](https://github.com/geekcom/validator-docs/compare/3.5.0...3.5.1)
 
