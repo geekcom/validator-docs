@@ -87,7 +87,7 @@ $this->validate($request, [
 
 ```php
 $this->validate($request, [
-    'inscricao_estadual:UF' => 'required|inscricao_estadual:UF',
+    'inscricao_estadual' => 'required|inscricao_estadual:UF',
 ]);
 ```
 
@@ -209,7 +209,7 @@ public function store(Request $request)
         'renavam' => 'required|renavam',
         'placa' => 'required|placa',
         'certidao' => 'required|certidao',
-        'inscricao_estadual:UF' => 'required|inscricao_estadual:UF',
+        'inscricao_estadual' => 'required|inscricao_estadual:SP',
     ]);
 
     dd($data);
@@ -226,7 +226,7 @@ public function store(Request $request)
 * **CPF** - https://geradornv.com.br/gerador-cpf/
 * **NIS** - https://www.4devs.com.br/gerador_de_pis_pasep
 * **CNS** - https://geradornv.com.br/gerador-cns/
-* **CERTIDÃO** - https://www.treinaweb.com.br/ferramentas-para-desenvolvedores/gerador/certidao
+* **CERTIDÕES** - https://www.4devs.com.br/gerador_numero_certidoes
 * **INSCRIÇÃO ESTADUAL** - https://www.4devs.com.br/gerador_de_inscricao_estadual
 * **RENAVAM** - https://www.4devs.com.br/gerador_de_renavam
 * **PLACA** - https://www.4devs.com.br/gerador_de_placa_automoveis

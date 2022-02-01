@@ -8,3 +8,4 @@ composer.lock
 docker-compose.yml
 .phpcs-cache
 .phpunit.result.cache
+phpunit.xml.dist

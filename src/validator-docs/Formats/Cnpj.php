@@ -2,7 +2,9 @@
 
 namespace geekcom\ValidatorDocs\Formats;
 
-class Cnpj implements \geekcom\ValidatorDocs\Contracts\ValidatorFormats
+use geekcom\ValidatorDocs\Contracts\ValidatorFormats;
+
+class Cnpj implements ValidatorFormats
 {
     public static function validateFormat(string $value): bool
     {

@@ -3,6 +3,20 @@
 A partir da versão 3.5.1 nosso modelo de logs é baseado em [mantenha um changelog](https://keepachangelog.com/pt-BR/1.0.0/) e o
 nosso versionamento continua sendo [versionamento semântico](https://semver.org/lang/pt-BR/).
 
+## [3.6.0](https://github.com/geekcom/validator-docs/compare/3.5.3...3.6.0)
+
+## Novidades
+
+- Corrigido: A documentação referente a validação de inscrição estadual. 
+- Atualizado:
+  - A versão mínima do PHP, e algumas dependências do projeto;
+  - As classes de validação de formatos de documentos NIS e CNPJ;
+  - O arquivo `phpunit.xml` foi adicionado ao `.gitignore`.
+- Removido: O arquivo `phpunit.xml`.
+- Adicionado: 
+  - O arquivo `phpunit.xml.dist`;
+  - A possibilidade de rodar testes de unidade via comando `composer testdox`;
+
 ## [3.5.4](https://github.com/geekcom/validator-docs/compare/3.5.3...3.5.4)
 
 ## Commits

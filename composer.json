@@ -9,15 +9,15 @@
     }
   ],
   "require": {
-    "php": ">=7.2",
+    "php": "^7.3|^8.0",
     "thiagocfn/inscricaoestadual": "^1.1"
   },
   "require-dev": {
     "phpunit/phpunit": "^8.4|^9.4",
-    "orchestra/testbench": "^4.0",
-    "php-coveralls/php-coveralls": "^2.2",
+    "orchestra/testbench": "^6.0",
+    "php-coveralls/php-coveralls": "^2.5",
     "squizlabs/php_codesniffer": "*",
-    "phpstan/phpstan": "^0.12.5"
+    "phpstan/phpstan": "^1.4"
   },
   "autoload": {
     "psr-4": {
@@ -38,14 +38,15 @@
   },
   "scripts": {
     "phpcs": "phpcs --standard=PSR12 -n src",
-    "phpcbf" : "phpcbf --standard=PSR12 -n src",
+    "phpstan": "phpstan analyse src --level 0",
+    "phpcbf": "phpcbf --standard=PSR12 -n src",
     "unit": "phpunit --coverage-clover ./tests/log/clover.xml --colors=always",
     "unit-html": "php -d phar.readonly=0 vendor/bin/phpunit --coverage-html ./tests/log/ --colors=always",
-    "phpstan": "phpstan analyse src --level 0",
+    "testdox": "phpunit --testdox",
     "test": [
       "@phpcs",
-      "@unit",
-      "@phpstan"
+      "@phpstan",
+      "@unit"
     ]
   }
 }
