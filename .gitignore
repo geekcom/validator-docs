@@ -2,7 +2,7 @@
 composer.phar
 .DS_Store
 .idea/
-/tests/log/
+/build
 *.cache
 docker-compose.yml
 .phpcs-cache
