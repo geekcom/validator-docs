@@ -7,7 +7,10 @@ nosso versionamento continua sendo [versionamento semântico](https://semver.org
 
 ## Novidades
 
-- Corrigido: A documentação referente a validação de inscrição estadual. 
+- Corrigido: 
+  - A documentação referente a validação de inscrição estadual;
+  - O arquivo `composer.lock` foi removido do `.gitignore`;
+    - A opção depreciada do composer `--no-suggest`, foi removida do workflow Github actions.
 - Atualizado:
   - A versão mínima do PHP, e algumas dependências do projeto;
   - As classes de validação de formatos de documentos NIS e CNPJ;
