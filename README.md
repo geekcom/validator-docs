@@ -2,7 +2,7 @@
 _Biblioteca PHP para validação de documentos do Brasil usando **Laravel**_
 
 ![Build Status](https://github.com/geekcom/validator-docs/actions/workflows/proposing-changes.yml/badge.svg)
-[![Coverage Status](https://coveralls.io/repos/github/geekcom/validator-docs/badge.svg?branch=master)](https://coveralls.io/github/geekcom/validator-docs?branch=master)
+[![Coverage Status](https://coveralls.io/repos/github/geekcom/validator-docs/badge.svg)](https://coveralls.io/github/geekcom/validator-docs)
 [![PHPStan](https://img.shields.io/badge/PHPStan-enabled-brightgreen.svg?style=flat)](https://github.com/phpstan/phpstan)
 [![Total Downloads](https://poser.pugx.org/geekcom/validator-docs/downloads)](https://packagist.org/packages/geekcom/validator-docs)
 [![License](https://poser.pugx.org/geekcom/validator-docs/license)](https://packagist.org/packages/geekcom/validator-docs)
