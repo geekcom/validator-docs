@@ -14,7 +14,9 @@ nosso versionamento continua sendo [versionamento semântico](https://semver.org
 - Atualizado:
   - A versão mínima do PHP, e algumas dependências do projeto;
   - As classes de validação de formatos de documentos NIS e CNPJ;
-  - O arquivo `phpunit.xml` foi adicionado ao `.gitignore`.
+  - O arquivo `phpunit.xml` foi adicionado ao `.gitignore`;
+  - Suporte a badge de build do Github actions;
+  - Suporte a badge de Coverage Status do coveralls.io.
 - Removido: 
   - O arquivo `phpunit.xml`;
   - O suporte a travisCI.
