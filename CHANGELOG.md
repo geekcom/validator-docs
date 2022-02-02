@@ -10,12 +10,14 @@ nosso versionamento continua sendo [versionamento semântico](https://semver.org
 - Corrigido: 
   - A documentação referente a validação de inscrição estadual;
   - O arquivo `composer.lock` foi removido do `.gitignore`;
-    - A opção depreciada do composer `--no-suggest`, foi removida do workflow Github actions.
+  - A opção depreciada do composer `--no-suggest`, foi removida do workflow Github actions.
 - Atualizado:
   - A versão mínima do PHP, e algumas dependências do projeto;
   - As classes de validação de formatos de documentos NIS e CNPJ;
   - O arquivo `phpunit.xml` foi adicionado ao `.gitignore`.
-- Removido: O arquivo `phpunit.xml`.
+- Removido: 
+  - O arquivo `phpunit.xml`;
+  - O suporte a travisCI.
 - Adicionado: 
   - O arquivo `phpunit.xml.dist`;
   - A possibilidade de rodar testes de unidade via comando `composer testdox`;
