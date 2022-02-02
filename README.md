@@ -1,7 +1,7 @@
 # Validator Docs - Brasil
 _Biblioteca PHP para validação de documentos do Brasil usando **Laravel**_
 
-[![Build Status](https://app.travis-ci.com/geekcom/validator-docs.svg?branch=master)](https://app.travis-ci.com/geekcom/validator-docs)
+![Build Status](https://github.com/geekcom/validator-docs/actions/workflows/proposing-changes.yml/badge.svg)
 [![Coverage Status](https://coveralls.io/repos/github/geekcom/validator-docs/badge.svg?branch=master)](https://coveralls.io/github/geekcom/validator-docs?branch=master)
 [![PHPStan](https://img.shields.io/badge/PHPStan-enabled-brightgreen.svg?style=flat)](https://github.com/phpstan/phpstan)
 [![Total Downloads](https://poser.pugx.org/geekcom/validator-docs/downloads)](https://packagist.org/packages/geekcom/validator-docs)
@@ -87,7 +87,7 @@ $this->validate($request, [
 
 ```php
 $this->validate($request, [
-    'inscricao_estadual:UF' => 'required|inscricao_estadual:UF',
+    'inscricao_estadual' => 'required|inscricao_estadual:UF',
 ]);
 ```
 
@@ -209,7 +209,7 @@ public function store(Request $request)
         'renavam' => 'required|renavam',
         'placa' => 'required|placa',
         'certidao' => 'required|certidao',
-        'inscricao_estadual:UF' => 'required|inscricao_estadual:UF',
+        'inscricao_estadual' => 'required|inscricao_estadual:SP',
     ]);
 
     dd($data);
@@ -226,7 +226,7 @@ public function store(Request $request)
 * **CPF** - https://geradornv.com.br/gerador-cpf/
 * **NIS** - https://www.4devs.com.br/gerador_de_pis_pasep
 * **CNS** - https://geradornv.com.br/gerador-cns/
-* **CERTIDÃO** - https://www.treinaweb.com.br/ferramentas-para-desenvolvedores/gerador/certidao
+* **CERTIDÕES** - https://www.4devs.com.br/gerador_numero_certidoes
 * **INSCRIÇÃO ESTADUAL** - https://www.4devs.com.br/gerador_de_inscricao_estadual
 * **RENAVAM** - https://www.4devs.com.br/gerador_de_renavam
 * **PLACA** - https://www.4devs.com.br/gerador_de_placa_automoveis

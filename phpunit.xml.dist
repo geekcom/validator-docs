@@ -8,8 +8,8 @@
       <directory>./src/</directory>
     </include>
     <report>
-      <clover outputFile="./tests/log/clover.xml"/>
-      <html outputDirectory="./tests/log/report" lowUpperBound="35" highLowerBound="70"/>
+      <clover outputFile="build/logs/clover.xml"/>
+      <html outputDirectory="build/logs/html" lowUpperBound="35" highLowerBound="70"/>
     </report>
   </coverage>
   <testsuites>
@@ -17,5 +17,4 @@
       <directory suffix=".php">./tests/</directory>
     </testsuite>
   </testsuites>
-  <logging/>
 </phpunit>
