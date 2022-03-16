@@ -1,7 +1,14 @@
 # Changelog
 
 A partir da versão 3.5.1 nosso modelo de logs é baseado em [mantenha um changelog](https://keepachangelog.com/pt-BR/1.0.0/) e o
-nosso versionamento continua sendo [versionamento semântico](https://semver.org/lang/pt-BR/).
+nosso versionamento é [semântico](https://semver.org/lang/pt-BR/).
+
+## [3.7.1](https://github.com/geekcom/validator-docs/compare/3.7.0...3.7.1)
+
+## Novidades
+
+- Corrigido:
+  - Um dos valores usados nos testes de validação de RENAVAM;
 
 ## [3.7.0](https://github.com/geekcom/validator-docs/compare/3.6.0...3.7.0)
 
@@ -10,7 +17,6 @@ nosso versionamento continua sendo [versionamento semântico](https://semver.org
 - Atualizado:
   - As regras de validação de RENAVAM foram reescritas;
   - Os testes de validação de RENAVAM foram atualizados.
-
 
 ## [3.6.0](https://github.com/geekcom/validator-docs/compare/3.5.3...3.6.0)
 
