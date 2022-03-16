@@ -18,20 +18,24 @@ final class RenavamTest extends ValidatorTestCase
 
         $atual = $instance->validateRenavam('', $renavam);
 
-        $this->assertSame($esperado, $atual);
+        $this->assertSame($esperado, $atual, $renavam);
     }
 
     public function renavamProvider(): array
     {
-        return [
-            'Input correto' => [
-                'renavam' => 639884962,
-                'esperado' => true,
-            ],
-            'Input incorreto' => [
-                'renavam' => 11111111111,
-                'esperado' => false
-            ],
-        ];
+        $correctValues = [32094074362, 23478829239, 34145742746, 41833820181, 639884962];
+        $wrongValues = [11111111111, 32094074212, 62128843267];
+
+        return array_reduce(
+            array_merge($correctValues, $wrongValues),
+            function ($acc, $value) use ($correctValues) {
+                $key = "Renavam " . $value;
+                $testProperties = ['renavam' => $value, 'esperado' => in_array($value, $correctValues)];
+
+                $acc[$key] = $testProperties;
+                return $acc;
+            },
+            []
+        );
     }
 }
