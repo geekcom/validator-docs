@@ -40,8 +40,6 @@ class Validator extends BaseValidator
     {
         $cpf = new Cpf();
 
-        $this->validateFormat($value, 'cpf');
-
         return $cpf->validateCpf($attribute, $value);
     }
 
@@ -122,4 +120,30 @@ class Validator extends BaseValidator
 
         return $ddd->validateDdd($attribute, $value);
     }
+
+    protected function validateFormatoCpf($attribute, $value): bool
+    {
+        return $this->validateFormat($value, 'cpf');
+    }
+
+    protected function validateFormatoCnpj($attribute, $value): bool
+    {
+        return $this->validateFormat($value, 'cnpj');
+    }
+
+    protected function validateFormatoCpfCnpj($attribute, $value): bool
+    {
+        return ($this->validateFormat($value, 'cpf') || $this->validateFormat($value, 'cnpj'));
+    }
+
+    protected function validateFormatoNis($attribute, $value): bool
+    {
+        return $this->validateFormat($value, 'nis');
+    }
+
+    protected function validateFormatoCertidao($attribute, $value): bool
+    {
+        return $this->validateFormat($value, 'certidao');
+    }
+
 }
