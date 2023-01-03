@@ -3,6 +3,15 @@
 A partir da versão 3.5.1 nosso modelo de logs é baseado em [mantenha um changelog](https://keepachangelog.com/pt-BR/1.0.0/) e o
 nosso versionamento é [semântico](https://semver.org/lang/pt-BR/).
 
+## [3.8.0](https://github.com/geekcom/validator-docs/compare/3.7.1...3.8.0)
+
+## Novidades
+
+- Melhorias:
+  - Os testes de validação de formatos foram melhorados;
+  - Diversas pequenas melhorias foram adicionadas;
+  - A doc foi melhorada.
+
 ## [3.7.1](https://github.com/geekcom/validator-docs/compare/3.7.0...3.7.1)
 
 ## Novidades
