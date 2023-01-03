@@ -15,14 +15,15 @@ _Biblioteca PHP para validação de documentos do Brasil usando **Laravel**_
 - Validar qualquer documento do Brasil;
 - Código testado e confiável;
 - Open Source;
-- Usado por milhares de sistemas.
+- Usado por milhares de sistemas;
+- Aprovado pela comunidade Laravel.
 
 ## Instalação
 No arquivo `composer.json`, adicione validator-docs como dependência do seu projeto:
 
 ```
 "require": {
-    "geekcom/validator-docs" : "^3.7"
+    "geekcom/validator-docs" : "^3.8"
  },
 ```
 
@@ -40,7 +41,21 @@ composer require geekcom/validator-docs
 
 ----------------------------------------------------------------------------------------------------------------------------
 
-## Como usar
+## Testes
+Para executar os testes, basta fazer o seguinte:
+
+* Instale as dependências do projeto;
+```bash
+composer install
+``` 
+* Execute os testes.
+```bash
+composer test
+```
+
+----------------------------------------------------------------------------------------------------------------------------
+
+## Como usar a biblioteca
 Agora que os métodos de validação validator-docs Brasil estão disponíveis, será possível usar da seguinte forma:
 
 * **cpf** - Verifica se um CPF é valido;

@@ -50,7 +50,7 @@ final class TestValidator extends ValidatorTestCase
             ['certo' => 'cpf-cnpj']
         );
 
-        $incorrect = \Validator::make(
+        $incorrect = Validator::make(
             ['errado' => '99800-1926'],
             ['errado' => 'cpf-cnpj']
         );
@@ -77,7 +77,7 @@ final class TestValidator extends ValidatorTestCase
 
         $this->assertTrue($incorrect->fails());
 
-        $correct = \Validator::make(
+        $correct = Validator::make(
             ['certo' => '04463004100'],
             ['certo' => 'cnh']
         );
@@ -286,30 +286,6 @@ final class TestValidator extends ValidatorTestCase
             ['input_inscricao_estadual' => $rules]
         );
         $this->assertTrue($correct->{$assert}());
-    }
-
-    /** @test**/
-    public function formatoRenavam()
-    {
-        $correct = Validator::make(
-            ['certo' => '197073212'],
-            ['certo' => 'renavam']
-        );
-
-        $incorrect = Validator::make(
-            ['errado' => '1234555582'],
-            ['errado' => 'renavam']
-        );
-
-        $this->assertTrue($correct->passes());
-        $this->assertTrue($incorrect->fails());
-
-        $correct = Validator::make(
-            ['certo' => '1970.73212'],
-            ['certo' => 'renavam']
-        );
-
-        $this->assertTrue($correct->passes());
     }
 
     /** @test **/

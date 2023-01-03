@@ -2,6 +2,7 @@
 
 namespace geekcom\ValidatorDocs\Tests;
 
+use geekcom\ValidatorDocs\ValidatorProvider;
 use Orchestra\Testbench\TestCase;
 
 abstract class ValidatorTestCase extends TestCase
@@ -10,6 +11,6 @@ abstract class ValidatorTestCase extends TestCase
     {
         parent::setUp();
 
-        $this->app->register(\geekcom\ValidatorDocs\ValidatorProvider::class);
+        $this->app->register(ValidatorProvider::class);
     }
 }
