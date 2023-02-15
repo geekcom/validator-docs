@@ -3,6 +3,15 @@
 A partir da versão 3.5.1 nosso modelo de logs é baseado em [mantenha um changelog](https://keepachangelog.com/pt-BR/1.0.0/) e o
 nosso versionamento é [semântico](https://semver.org/lang/pt-BR/).
 
+## [3.9.0](https://github.com/geekcom/validator-docs/compare/3.7.1...3.8.0)
+
+## Novidades - Testado com Laravel 10
+
+- Corrigido:
+  - A mensagem de retorno em caso de erro de validação de DDD.
+- Atualizado:
+  - A documentação foi atualizada.
+
 ## [3.8.0](https://github.com/geekcom/validator-docs/compare/3.7.1...3.8.0)
 
 ## Novidades

@@ -82,7 +82,7 @@ $this->validate($request, [
 ]);
 ```
 
-* **titulo_eleitor** - Verifica se um Título de Eleitor é válido;
+* **titulo_eleitor** - Verifica se um Título Eleitoral é válido;
 
 ```php
 $this->validate($request, [
@@ -146,7 +146,7 @@ $this->validate($request, [
 ]);
 ```
 
-* **ddd** - Verifica se um número de DDD é válido;
+* **ddd** - Verifica se um número de [DDD](https://pt.wikipedia.org/wiki/Discagem_direta_%C3%A0_dist%C3%A2ncia) é válido;
 
 ```php
 $this->validate($request, [
@@ -221,6 +221,7 @@ public function store(Request $request)
         'titulo_eleitor' => 'required|titulo_eleitor',
         'nis' => 'required|nis',
         'cns' => 'required|cns',
+        'ddd' => 'required|ddd',
         'renavam' => 'required|renavam',
         'placa' => 'required|placa',
         'certidao' => 'required|certidao',
