@@ -49,6 +49,7 @@ class ValidatorProvider extends ServiceProvider
             'certidao' => 'Número da Certidão inválido',
             'ddd' => 'DDD inválido',
             'placa' => 'Placa inválida',
+            'passaporte' => 'Passaporte inválido',
             'formato_cnpj' => 'Formato inválido para CNPJ',
             'formato_cpf' => 'Formato inválido para CPF',
             'formato_cpf_cnpj' => 'Formato inválido para CPF ou CNPJ',

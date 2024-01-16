@@ -12,7 +12,8 @@ use geekcom\ValidatorDocs\Rules\{Certidao,
     Nis,
     Placa,
     Renavam,
-    TituloEleitoral};
+    TituloEleitoral,
+    Passaporte};
 use Illuminate\Contracts\Translation\Translator;
 use Illuminate\Validation\Validator as BaseValidator;
 
@@ -121,5 +122,11 @@ class Validator extends BaseValidator
         $ddd = new Ddd();
 
         return $ddd->validateDdd($attribute, $value);
+    }
+
+    protected function validatePassaporte($attribute, $value): bool
+    {
+        $passaporte = new Passaporte();
+        return $passaporte->validatePassaporte($attribute, $value);
     }
 }
