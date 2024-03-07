@@ -30,13 +30,13 @@ No arquivo `composer.json`, adicione validator-docs como dependência do seu pro
 
 Depois execute:
 
-```
+```bash
 composer install
 ```
 
 Ou simplesmente execute o comando:
 
-```
+```bash
 composer require geekcom/validator-docs
 ```
 
