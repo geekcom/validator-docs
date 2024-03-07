@@ -341,4 +341,21 @@ final class TestValidator extends ValidatorTestCase
 
         $this->assertTrue($incorrect->fails());
     }
+
+    /** @test **/
+    public function passaporte()
+    {
+        $correct = Validator::make(
+            ['certo' => 'GB139485'],
+            ['certo' => 'passaporte']
+        );
+
+        $incorrect = Validator::make(
+            ['errado' => 'A3948'],
+            ['errado' => 'passaporte']
+        );
+
+        $this->assertTrue($correct->passes());
+        $this->assertTrue($incorrect->fails());
+    }
 }
