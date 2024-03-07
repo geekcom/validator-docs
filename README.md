@@ -83,6 +83,14 @@ $this->validate($request, [
 ]);
 ```
 
+* **passaporte** - Verifica se uma Passaporte Brasileiro é válido;
+
+```php
+$this->validate($request, [
+    'passaporte' => 'required|passaporte',
+]);
+```
+
 * **titulo_eleitor** - Verifica se um Título Eleitoral é válido;
 
 ```php
@@ -227,6 +235,7 @@ public function store(Request $request)
         'placa' => 'required|placa',
         'certidao' => 'required|certidao',
         'inscricao_estadual' => 'required|inscricao_estadual:SP',
+        'passaporte' => 'required|passaporte',
     ]);
 
     dd($data);
@@ -247,6 +256,7 @@ public function store(Request $request)
 * **INSCRIÇÃO ESTADUAL** - https://www.4devs.com.br/gerador_de_inscricao_estadual
 * **RENAVAM** - https://www.4devs.com.br/gerador_de_renavam
 * **PLACA** - https://www.4devs.com.br/gerador_de_placa_automoveis
+* **Passaporte Brasileiro** - https://geradornv.com.br/gerador-passaporte/
 
 Fique a vontade para contribuir de qualquer forma.
 
