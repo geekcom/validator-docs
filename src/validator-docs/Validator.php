@@ -30,18 +30,9 @@ class Validator extends BaseValidator
         parent::__construct($translator, $data, $rules, $messages, $customAttributes);
     }
 
-    protected function validateFormat($value, $document, $attribute = null)
-    {
-        if (!empty($value)) {
-            return (new ValidatorFormats())->execute($value, $document);
-        }
-    }
-
     protected function validateCpf($attribute, $value): bool
     {
         $cpf = new Cpf();
-
-        $this->validateFormat($value, 'cpf');
 
         return $cpf->validateCpf($attribute, $value);
     }
