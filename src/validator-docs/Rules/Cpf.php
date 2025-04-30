@@ -11,17 +11,17 @@ use function mb_strlen;
 
 final class Cpf extends Sanitization
 {
-    protected function validateFormat($value, $document, $attribute = null)
+    protected function validateCPFFormat(string $value)
     {
         if (!empty($value)) {
-            return (new ValidatorFormats())->execute($value, $document);
+            return (new ValidatorFormats())->execute($value, 'cpf');
         }
     }
 
     public function validateCpf($attribute, $value): bool
     {
 
-        if (!$this->validateFormat($value, 'cpf')) {
+        if (!$this->validateCPFFormat($value)) {
             return false;
         }
 
