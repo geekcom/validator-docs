@@ -3,7 +3,14 @@
 A partir da versão 3.5.1 nosso modelo de logs é baseado em [mantenha um changelog](https://keepachangelog.com/pt-BR/1.0.0/) e o
 nosso versionamento é [semântico](https://semver.org/lang/pt-BR/).
 
-## [3.11.0](https://github.com/geekcom/validator-docs/compare/3.9.0...3.10.0)
+## [3.11.0](https://github.com/geekcom/validator-docs/compare/3.10.0...3.11.0)
+
+## Novidades
+
+- Atualizado:
+  - Melhorias na validação de CPF.
+
+## [3.10.0](https://github.com/geekcom/validator-docs/compare/3.9.0...3.10.0)
 
 ## Novidades - Validação de passaporte brasileiro
 
