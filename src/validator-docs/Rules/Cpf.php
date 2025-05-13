@@ -4,27 +4,13 @@ declare(strict_types=1);
 
 namespace geekcom\ValidatorDocs\Rules;
 
-use geekcom\ValidatorDocs\ValidatorFormats;
-
 use function preg_match;
 use function mb_strlen;
 
 final class Cpf extends Sanitization
 {
-    protected function validateCPFFormat(string $value)
-    {
-        if (!empty($value)) {
-            return (new ValidatorFormats())->execute($value, 'cpf');
-        }
-    }
-
     public function validateCpf($attribute, $value): bool
     {
-
-        if (!$this->validateCPFFormat($value)) {
-            return false;
-        }
-
         $c = $this->sanitize($value);
 
         if (mb_strlen($c) != 11 || preg_match("/^{$c[0]}{11}$/", $c)) {
