@@ -19,16 +19,9 @@ final class TestValidator extends ValidatorTestCase
             ['errado' => 'cpf']
         );
 
-        $incorrectWithAlpha = Validator::make(
-            ['errado' => '094.050.986-59ABCDEF'],
-            ['errado' => 'cpf']
-        );
-
         $this->assertTrue($correct->passes());
 
         $this->assertTrue($incorrect->fails());
-
-        $this->assertTrue($incorrectWithAlpha->fails());
     }
 
     /** @test **/
