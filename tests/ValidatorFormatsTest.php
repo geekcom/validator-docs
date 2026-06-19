@@ -44,7 +44,10 @@ final class ValidatorFormatsTest extends ValidatorTestCase
     public function formatoCnpj(): void
     {
         self::assertTrue($this->validatorFormats->execute('00.000.000/0000-00', 'cnpj'));
+        self::assertTrue($this->validatorFormats->execute('T6.JSP.XPS/0001-11', 'cnpj'));
+        self::assertTrue($this->validatorFormats->execute('t6.jsp.xps/0001-11', 'cnpj'));
         self::assertFalse($this->validatorFormats->execute('00000000000000', 'cnpj'));
+        self::assertFalse($this->validatorFormats->execute('T6.JSP.XPS/0001-1A', 'cnpj'));
     }
 
     /** @test */

@@ -8,6 +8,6 @@ class Cnpj implements ValidatorFormats
 {
     public static function validateFormat(string $value): bool
     {
-        return preg_match('/^\d{2}\.\d{3}\.\d{3}\/\d{4}-\d{2}$/', $value) > 0;
+        return preg_match('/^[A-Z\d]{2}\.[A-Z\d]{3}\.[A-Z\d]{3}\/[A-Z\d]{4}-\d{2}$/i', $value) > 0;
     }
 }
