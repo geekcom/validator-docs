@@ -8,7 +8,7 @@ final class Ddd
 {
     public function validateDdd($attribute, $ddd): bool
     {
-        if (preg_match('/([1-9]{2}+)/', $ddd, $matches) <= 0) {
+        if (preg_match('/^[1-9]{2}$/', (string) $ddd, $matches) <= 0) {
             return false;
         }
 
@@ -30,6 +30,6 @@ final class Ddd
             range(91, 99)
         );
 
-        return in_array($dddExtracted, $dddExisting);
+        return in_array($dddExtracted, $dddExisting, true);
     }
 }

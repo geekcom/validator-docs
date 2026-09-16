@@ -337,9 +337,21 @@ final class TestValidator extends ValidatorTestCase
             ['errado' => 'ddd']
         );
 
+        $incorrectWithThreeDigits = Validator::make(
+            ['errado' => '011'],
+            ['errado' => 'ddd']
+        );
+
+        $incorrectWithAlphaNumeric = Validator::make(
+            ['errado' => '11a'],
+            ['errado' => 'ddd']
+        );
+
         $this->assertTrue($correct->passes());
 
         $this->assertTrue($incorrect->fails());
+        $this->assertTrue($incorrectWithThreeDigits->fails());
+        $this->assertTrue($incorrectWithAlphaNumeric->fails());
     }
 
     /** @test **/
