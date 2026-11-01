@@ -14,7 +14,7 @@ final class Cns extends Sanitization
         $cns = $this->sanitize($value);
 
         // CNSs definitivos começam em 1 ou 2 / CNSs provisórios em 7, 8 ou 9
-        if (preg_match("/[1-2][0-9]{10}00[0-1][0-9]/", $cns) || preg_match("/[7-9][0-9]{14}/", $cns)) {
+        if (preg_match("/^[1-2][0-9]{10}00[0-1][0-9]$/", $cns) || preg_match("/^[7-9][0-9]{14}$/", $cns)) {
             return $this->somaPonderadaCns($cns) % 11 == 0;
         }
 
