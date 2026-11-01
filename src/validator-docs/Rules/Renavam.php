@@ -60,7 +60,7 @@ class Renavam extends Sanitization
      */
     protected function renavamHasCorrectLength(string $renavam): bool
     {
-        return !!preg_match("/[0-9]{11}/", $renavam);
+        return !!preg_match("/^[0-9]{11}$/", $renavam);
     }
 
     /**
