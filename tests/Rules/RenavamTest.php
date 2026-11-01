@@ -24,7 +24,7 @@ final class RenavamTest extends ValidatorTestCase
     public function renavamProvider(): array
     {
         $correctValues = [32094074362, 23478829239, 34145742746, 41833820181, 63988496222];
-        $wrongValues = [11111111111, 32094074212, 62128843267];
+        $wrongValues = [11111111111, 32094074212, 62128843267, 123456789050];
 
         return array_reduce(
             array_merge($correctValues, $wrongValues),

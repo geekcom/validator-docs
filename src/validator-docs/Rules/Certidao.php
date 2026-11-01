@@ -20,7 +20,7 @@ final class Certidao extends Sanitization
     {
         $certidao = $this->sanitize($value);
 
-        if (!preg_match("/[0-9]{32}/", $certidao)) {
+        if (!preg_match("/^[0-9]{32}$/", $certidao)) {
             return false;
         }
 
